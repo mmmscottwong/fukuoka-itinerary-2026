@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>福岡 6日5夜 終極自駕版 · 2026/04/17–22</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-deep:#f0f2f5;--bg-surface:#ffffff;--bg-raised:#f7f9fb;--bg-code:#eef1f4;
+  --border:#e0e4e8;--border-bright:#ccd2d8;
+  --text-primary:#1a1a2e;--text-secondary:#666;--text-muted:#aaa;
+  --accent-primary:#2c8c99;--accent-secondary:#22c55e;
+  --accent-warning:#eab308;--accent-danger:#e94560;--accent-tertiary:#5cc6d0;
+  --sidebar-bg:#1a3a4a;--sidebar-text:rgba(255,255,255,.7);--sidebar-accent:#5cc6d0;
+  --card-shadow:0 1px 3px rgba(0,0,0,.06);--card-shadow-h:0 4px 12px rgba(0,0,0,.08);
+  --font-h:'Inter',-apple-system,sans-serif;--font-b:'Inter',-apple-system,sans-serif;--font-c:'Fira Code',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-b);color:var(--text-primary);background:var(--bg-deep);line-height:1.65;-webkit-font-smoothing:antialiased}
+.layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+aside{background:var(--sidebar-bg);color:var(--sidebar-text);padding:28px 20px;position:sticky;top:0;height:100vh;overflow-y:auto}
+aside .brand{font-family:var(--font-c);font-size:11px;letter-spacing:.2em;color:var(--sidebar-accent);text-transform:uppercase;margin-bottom:6px}
+aside h1{font-size:20px;color:#fff;line-height:1.25;margin-bottom:18px;font-weight:700}
+aside .trip-meta{font-size:12px;color:var(--sidebar-text);margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.12)}
+aside .trip-meta div{margin:4px 0}
+aside .nav-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sidebar-accent);margin:14px 0 8px}
+aside .nav button{display:block;width:100%;text-align:left;background:transparent;border:none;color:var(--sidebar-text);padding:9px 12px;font-size:13px;font-family:inherit;cursor:pointer;border-radius:4px;margin:2px 0;border-left:2px solid transparent}
+aside .nav button:hover{background:rgba(255,255,255,.05);color:#fff}
+aside .nav button.active{background:rgba(92,198,208,.12);color:#fff;border-left-color:var(--sidebar-accent)}
+aside .nav button .d{font-family:var(--font-c);font-size:10px;color:var(--sidebar-accent);display:block}
+main{padding:36px 44px 80px;max-width:1100px}
+.badge{display:inline-block;font-family:var(--font-c);font-size:10px;letter-spacing:.18em;padding:5px 10px;border:1px solid var(--accent-primary);color:var(--accent-primary);text-transform:uppercase;border-radius:3px}
+h1.title{font-size:36px;line-height:1.2;margin:14px 0 8px;font-weight:800;letter-spacing:-.01em}
+h1.title .hl{color:var(--accent-primary)}
+.title-meta{color:var(--text-secondary);font-size:13px;margin-bottom:24px;font-family:var(--font-c)}
+.exec{background:var(--bg-surface);border-left:3px solid var(--accent-primary);padding:20px 24px;margin:18px 0 28px;position:relative;box-shadow:var(--card-shadow);border-radius:0 6px 6px 0}
+.exec .lab{position:absolute;top:-9px;left:16px;background:var(--bg-deep);padding:0 8px;font-size:9px;letter-spacing:.2em;color:var(--accent-primary);font-family:var(--font-c);font-weight:600}
+.exec p{margin:6px 0;font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:0 0 28px}
+.kpi{background:var(--bg-surface);padding:16px;border-radius:6px;box-shadow:var(--card-shadow);border:1px solid var(--border)}
+.kpi b{display:block;font-size:22px;color:var(--accent-primary);font-weight:700;font-family:var(--font-c);letter-spacing:-.02em}
+.kpi span{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;display:block;margin-top:4px}
+section.day{background:var(--bg-surface);border-radius:8px;padding:28px 32px;margin:16px 0;border:1px solid var(--border);box-shadow:var(--card-shadow);display:none}
+section.day.show{display:block}
+.day-head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:18px;flex-wrap:wrap;gap:8px}
+.day-head .num{font-family:var(--font-c);font-size:11px;color:var(--accent-primary);letter-spacing:.18em;text-transform:uppercase}
+.day-head h2{font-size:24px;font-weight:700;margin:2px 0;color:var(--text-primary)}
+.day-head h2 .acc{color:var(--accent-primary)}
+.day-head .date{color:var(--text-secondary);font-size:13px;font-family:var(--font-c)}
+.day-head .wx{text-align:right;font-size:12px;color:var(--text-secondary)}
+.day-head .wx b{display:block;font-size:18px;color:var(--text-primary);font-family:var(--font-c)}
+.section-num{font-family:var(--font-c);font-size:10px;color:var(--accent-primary);letter-spacing:.15em;text-transform:uppercase;margin-top:18px}
+h3{font-size:15px;font-weight:600;margin:4px 0 10px;color:var(--text-primary)}
+.tl{list-style:none;padding:0;margin:0;border-left:2px solid var(--border);margin-left:6px}
+.tl li{padding:14px 0 14px 22px;position:relative;border-bottom:1px dashed var(--border)}
+.tl li:last-child{border-bottom:none}
+.tl li::before{content:"";position:absolute;left:-7px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--accent-primary);box-shadow:0 0 0 3px var(--bg-surface)}
+.tl li.eat::before{background:var(--accent-warning)}
+.tl li.drive::before{background:var(--accent-tertiary)}
+.tl li.warn::before{background:var(--accent-danger)}
+.tl .t{font-family:var(--font-c);font-size:13px;color:var(--accent-primary);font-weight:600;display:inline-block;margin-right:10px;min-width:54px}
+.tl .h{font-weight:600;font-size:14px;color:var(--text-primary)}
+.tl .det{display:block;color:var(--text-secondary);font-size:12px;margin-top:4px;line-height:1.6}
+.tl .meta{display:inline-block;font-family:var(--font-c);font-size:11px;color:var(--text-muted);margin-right:10px}
+.tl .tag{display:inline-block;background:var(--bg-raised);color:var(--text-secondary);font-size:10px;padding:2px 7px;border-radius:10px;margin-right:5px;letter-spacing:.04em;font-family:var(--font-c)}
+.tl .tag.warn{background:#fef3c7;color:#92400e}
+.tl .tag.eat{background:#fde68a;color:#92400e}
+.tl .tag.book{background:#fee2e2;color:#991b1b}
+.tl .tag.drive{background:#e0f2fe;color:#075985}
+.callout{border-left:3px solid;padding:14px 18px;margin:14px 0;border-radius:0 6px 6px 0;background:var(--bg-raised);font-size:13px}
+.callout.warn{border-color:var(--accent-warning);background:#fffbeb}
+.callout.dan{border-color:var(--accent-danger);background:#fef2f2}
+.callout.ok{border-color:var(--accent-secondary);background:#f0fdf4}
+.callout.info{border-color:var(--accent-primary);background:#ecfeff}
+.callout b{color:var(--text-primary)}
+.callout .lab{font-family:var(--font-c);font-size:9px;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:4px;font-weight:600}
+.callout.warn .lab{color:#92400e}.callout.dan .lab{color:#991b1b}.callout.ok .lab{color:#166534}.callout.info .lab{color:#0e7490}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.infocard{background:var(--bg-raised);border:1px solid var(--border);border-radius:6px;padding:14px 16px;font-size:12px}
+.infocard h4{font-size:11px;font-family:var(--font-c);text-transform:uppercase;letter-spacing:.12em;color:var(--accent-primary);margin-bottom:8px;font-weight:600}
+.infocard table{width:100%;font-size:12px}
+.infocard td{padding:3px 0;color:var(--text-secondary);border:none}
+.infocard td:first-child{color:var(--text-muted);width:40%;font-family:var(--font-c);font-size:11px}
+.infocard td:last-child{color:var(--text-primary)}
+table.summary-tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:12px;background:var(--bg-surface);border-radius:6px;overflow:hidden}
+table.summary-tbl th{background:var(--bg-raised);font-family:var(--font-c);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);padding:10px 12px;text-align:left;border-bottom:1px solid var(--border-bright)}
+table.summary-tbl td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-secondary);font-size:12px}
+table.summary-tbl tr:nth-child(even) td{background:var(--bg-raised)}
+table.summary-tbl tr:last-child td{border-bottom:none}
+table.summary-tbl b{color:var(--text-primary)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--text-secondary);margin:14px 0 4px;font-family:var(--font-c)}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.locbar{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:10px;font-family:var(--font-c)}
+.locbar a,.locbar span{display:inline-flex;align-items:center;gap:3px;padding:3px 7px;border-radius:3px;background:var(--bg-raised);color:var(--text-secondary);text-decoration:none;border:1px solid var(--border)}
+.locbar a:hover{background:var(--accent-primary);color:#fff;border-color:var(--accent-primary)}
+.locbar .mc{color:var(--accent-primary);font-weight:600}
+.locbar .hr{color:var(--accent-secondary)}
+.svg-map{background:var(--bg-raised);border:1px solid var(--border);border-radius:8px;padding:18px;margin:14px 0}
+.svg-map svg{width:100%;height:auto;display:block}
+.dl-btn{display:inline-block;background:var(--accent-primary);color:#fff;padding:10px 18px;border-radius:5px;text-decoration:none;font-family:var(--font-c);font-size:12px;font-weight:600;margin:8px 6px 8px 0;letter-spacing:.04em}
+.dl-btn:hover{background:#236e78}
+.dl-btn.alt{background:var(--bg-surface);color:var(--accent-primary);border:1px solid var(--accent-primary)}
+.locref-tbl td{font-size:11px;padding:8px 10px}
+.locref-tbl .mc{font-family:var(--font-c);color:var(--accent-primary);font-weight:600}
+.locref-tbl a{color:var(--accent-primary);text-decoration:none}
+.meals{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:14px 0 4px}
+.meal-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:6px;padding:12px 14px;font-size:12px;transition:all .2s}
+.meal-card:hover{border-color:var(--accent-primary);box-shadow:var(--card-shadow)}
+.meal-card .meal-icon{font-size:18px;display:block;margin-bottom:2px}
+.meal-card .meal-slot{font-family:var(--font-c);font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.meal-card .meal-name{display:block;color:var(--accent-primary);font-weight:600;margin:2px 0;text-decoration:none;font-size:13px;line-height:1.3}
+.meal-card .meal-name:hover{text-decoration:underline}
+.meal-card em{color:var(--text-muted);font-size:10px;font-style:normal;display:block;margin-top:4px}
+.meal-card.skip{opacity:.5}
+.meal-card.skip .meal-name{color:var(--text-muted);pointer-events:none}
+.tl .h a,a.loc-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent-primary);transition:color .15s}
+.tl .h a:hover,a.loc-link:hover{color:var(--accent-primary)}
+.info-wrap{text-align:center;margin:20px 0}
+.info-wrap img{max-width:100%;height:auto;border:1px solid var(--border);border-radius:6px;box-shadow:var(--card-shadow-h)}
+.placeholder-img{background:var(--bg-raised);border:2px dashed var(--border-bright);padding:60px 20px;border-radius:6px;color:var(--text-muted);text-align:center;font-family:var(--font-c);font-size:12px}
+.shrine-steps{counter-reset:step;padding:0;margin:10px 0;list-style:none}
+.shrine-steps li{counter-increment:step;padding:10px 0 10px 38px;position:relative;border-bottom:1px dashed var(--border);font-size:13px}
+.shrine-steps li::before{content:counter(step);position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:var(--accent-primary);color:#fff;text-align:center;line-height:26px;font-family:var(--font-c);font-weight:700;font-size:12px}
+footer{margin-top:50px;padding-top:24px;border-top:1px solid var(--border);color:var(--text-muted);font-size:11px;text-align:center;font-family:var(--font-c)}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr}
+  aside{position:relative;height:auto}
+  aside .nav{display:flex;flex-wrap:wrap;gap:4px}
+  aside .nav button{flex:1;min-width:90px;text-align:center}
+  main{padding:24px 18px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:26px}
+  section.day{padding:20px}
+  .grid2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div class="brand">ITINERARY · v3 FINAL</div>
+  <h1>福岡 6 日 5 夜 終極自駕版</h1>
+  <div class="trip-meta">
+    <div>📅 2026/04/17 – 04/22</div>
+    <div>👥 6 大人 + 1 幼童 (3.5 歲)</div>
+    <div>🚐 Nissan Serena 8 人座</div>
+    <div>🏨 千代 3-5-13</div>
+  </div>
+  <div class="nav-label">瀏覽</div>
+  <div class="nav">
+    <button class="nav-btn active" data-d="all">全部行程</button>
+    <button class="nav-btn" data-d="overview">📋 總覽</button>
+    <button class="nav-btn" data-d="map">🗺 地圖 + 動線</button>
+    <button class="nav-btn" data-d="locations">📍 地點總表 (Map Code)</button>
+    <button class="nav-btn" data-d="weather">☁️ 天氣 + 穿搭</button>
+    <button class="nav-btn" data-d="infographic">📄 單頁圖 (NotebookLM)</button>
+    <button class="nav-btn" data-d="1"><span class="d">DAY 01 · 4/17 五</span>抵達 · BRANCH · 港塔</button>
+    <button class="nav-btn" data-d="2"><span class="d">DAY 02 · 4/18 六</span>海之中道 · 燒肉一</button>
+    <button class="nav-btn" data-d="3"><span class="d">DAY 03 · 4/19 日</span>Safari · 九重夢</button>
+    <button class="nav-btn" data-d="4"><span class="d">DAY 04 · 4/20 一</span>糸島 · 能古島 · 天神</button>
+    <button class="nav-btn" data-d="5"><span class="d">DAY 05 · 4/21 二</span>動物園 · 燒肉二</button>
+    <button class="nav-btn" data-d="6"><span class="d">DAY 06 · 4/22 三</span>櫛田 · 機場</button>
+    <button class="nav-btn" data-d="critical">⚠️ 死線清單</button>
+  </div>
+</aside>
+
+<main>
+<span class="badge">FUKUOKA · 6D5N · DRIVING</span>
+<h1 class="title">福岡 <span class="hl">終極自駕</span> 6 日 5 夜</h1>
+<div class="title-meta">2026.04.17 (五) → 04.22 (三) · 6 ADULT + 1 INFANT · NISSAN SERENA</div>
+
+<div class="kpis">
+  <div class="kpi"><b>6D5N</b><span>行程長度</span></div>
+  <div class="kpi"><b>HKD 11.5k</b><span>每人預算</span></div>
+  <div class="kpi"><b>~480km</b><span>總駕駛距離</span></div>
+  <div class="kpi"><b>4 餐</b><span>頂級美食</span></div>
+  <div class="kpi"><b>11–21°C</b><span>福岡氣溫</span></div>
+  <div class="kpi"><b>¥5,000</b><span>通行料 ETC</span></div>
+  <div class="kpi"><b>¥50k</b><span>建議現金</span></div>
+</div>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="day show" data-d="overview">
+<div class="day-head"><div><div class="num">SECTION 00</div><h2>行程<span class="acc">總覽</span></h2><div class="date">FULL TRIP SNAPSHOT</div></div></div>
+
+<div class="section-num">SECTION 00.1</div>
+<h3>每日核心一覽</h3>
+<table class="summary-tbl">
+<thead><tr><th>日期</th><th>主題</th><th>核心地點</th><th>晚餐</th><th>駕駛 km</th></tr></thead>
+<tbody>
+<tr><td><b>Day 1</b> 4/17 五</td><td>抵達 · 補給</td><td>千代 → BRANCH (步行) → 博多港塔</td><td>🍣 博多豐一</td><td>~10</td></tr>
+<tr><td><b>Day 2</b> 4/18 六</td><td>海濱日</td><td>海之中道 · 動物之森 · 志賀島</td><td>🥩 肉いち 藥院店</td><td>~50</td></tr>
+<tr><td><b>Day 3</b> 4/19 日</td><td>大分長征</td><td>Safari · 九重夢吊橋 · 鳥栖 Outlet</td><td>🍜 牧のうどん</td><td>~360</td></tr>
+<tr><td><b>Day 4</b> 4/20 一</td><td>離島購物</td><td>糸島二見浦 · 能古島 · 天神</td><td>🍣 稚加榮 本店</td><td>~70</td></tr>
+<tr><td><b>Day 5</b> 4/21 二</td><td>市內慢遊</td><td>福岡市動物園 · 博多採買</td><td>🥩 大東園 本店</td><td>~15</td></tr>
+<tr><td><b>Day 6</b> 4/22 三</td><td>離開</td><td>櫛田神社 · 還車 · 回港</td><td>—</td><td>~10</td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.2</div>
+<h3>必要預訂時程</h3>
+<table class="summary-tbl">
+<thead><tr><th>項目</th><th>截止日</th><th>聯絡</th><th>備註</th></tr></thead>
+<tbody>
+<tr><td>稚加榮 本店 (Day 4 晚)</td><td><b>3/20 前</b></td><td>092-721-4624</td><td>7 人需個室，60 日前可訂</td></tr>
+<tr><td>大東園 本店 (Day 5 晚)</td><td><b>3/22 前</b></td><td>092-282-0055</td><td>上川端町 1-1-1 · 週末至少 3 週前</td></tr>
+<tr><td>肉いち 藥院店 (Day 2 晚)</td><td><b>4/4 前</b></td><td>092-522-4129</td><td>Tabelog 可訂</td></tr>
+<tr><td>博多豐一 (Day 1 晚)</td><td><b>4/10 前</b></td><td>092-281-0001 (Bayside)</td><td>博多港 Bayside Place 主店</td></tr>
+<tr><td><b>🆕 HK IDP 申請</b></td><td><b>3/18 前 (30 天前)</b></td><td>HKAA / 1823</td><td>駕駛必備，租車公司會檢查</td></tr>
+<tr><td><b>🆕 Pocket WiFi / SIM</b></td><td><b>4/3 前 (14 天前)</b></td><td>Sakura Mobile / Mobal</td><td>7 人共用，寄到 HK 地址</td></tr>
+<tr><td><b>🆕 ETC 卡</b></td><td><b>4/10 前 (7 天前)</b></td><td>Scott 通知租車公司</td><td>高速通行料自動記帳，省時</td></tr>
+<tr><td><b>🆕 下載 GO taxi + Google Translate</b></td><td><b>4/14 前 (3 天前)</b></td><td>App Store</td><td>Translate 離線日文 + GO 登記信用卡</td></tr>
+<tr><td><b>🆕 Klook Safari 預售檢查</b></td><td><b>4/12 前</b></td><td>Klook.com 搜尋「九州自然動物公園」</td><td>若有預售票可取消 07:30 死線</td></tr>
+<tr><td>Serena 兒童安全座椅</td><td><b>取車前</b></td><td>Scott 通知租車公司</td><td>3.5 歲 → 幼兒/Junior 型</td></tr>
+<tr><td>MK Skygate Jumbo Taxi (Day 1)</td><td><b>4/16 17:00</b></td><td>mktaxi-japan.com</td><td>9 人座載行李上門</td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.2B</div>
+<h3>🚨 緊急聯絡 / 醫療 / 支付 / App</h3>
+<div class="grid2">
+<div class="infocard">
+<h4>🏥 緊急 · 醫療</h4>
+<table>
+<tr><td>小兒急診熱線</td><td><b>#8000</b> (全國夜間)</td></tr>
+<tr><td>多語醫療諮詢</td><td><b>092-733-5429</b> (福岡·免費)</td></tr>
+<tr><td>Nissan 事故專線</td><td><b>0120-256-110</b> (24h)</td></tr>
+<tr><td>Nissan 主線</td><td>0120-00-4123</td></tr>
+<tr><td>日本緊急</td><td>警察 110 · 救護/火警 119</td></tr>
+<tr><td>24h 藥局</td><td><a href="https://www.google.com/maps/search/?api=1&query=Tsuruha+博多+24時間" target="_blank">Tsuruha 博多店 ↗</a></td></tr>
+<tr><td>HK 駐日領事館</td><td>03-3556-8980 (東京)</td></tr>
+</table>
+</div>
+<div class="infocard">
+<h4>💴 現金 · 支付策略</h4>
+<table>
+<tr><td>建議現金</td><td><b>¥50,000+</b> (幼童 7 人)</td></tr>
+<tr><td>ETC 通行料估算</td><td><b>~¥5,000</b> (全程)</td></tr>
+<tr><td>Day 3 長征</td><td>~¥3,800</td></tr>
+<tr><td>Day 4 糸島</td><td>~¥600</td></tr>
+<tr><td>城市卡付可行</td><td>~43% 場所</td></tr>
+<tr><td>鄉下 (Safari/九重/志賀島)</td><td><b>多為現金</b></td></tr>
+<tr><td>IC 卡 (Suica/PASMO)</td><td>便利店、自販機</td></tr>
+</table>
+</div>
+<div class="infocard">
+<h4>📱 必裝 App (出發前 3 天)</h4>
+<table>
+<tr><td>GO taxi</td><td>日本計程車 · 卡付</td></tr>
+<tr><td>Google Translate</td><td>離線 日文包 (必下)</td></tr>
+<tr><td>Google Maps</td><td>離線 福岡/大分 地圖</td></tr>
+<tr><td>Google My Maps</td><td>匯入 KML 行程</td></tr>
+<tr><td>tenki.jp</td><td>精確天氣 + 雨雲</td></tr>
+<tr><td>Windy</td><td>九重吊橋風速</td></tr>
+<tr><td>Klook</td><td>Safari 預售 + 門票</td></tr>
+</table>
+</div>
+<div class="infocard">
+<h4>👶 幼童補給點</h4>
+<table>
+<tr><td>尿布 / 奶粉</td><td><b>Akachan Honpo</b> 博多 Marui B1</td></tr>
+<tr><td>藥妝</td><td>Matsumoto Kiyoshi · Welcia · Tsuruha</td></tr>
+<tr><td>日本品牌尿布</td><td>Merries · Moony · Genki</td></tr>
+<tr><td>便利店</td><td>⚠️ 幼童品項少，避用</td></tr>
+<tr><td>副食品</td><td>和光堂 / Kewpie baby food</td></tr>
+<tr><td>車上緊急</td><td>備 2 天份尿布 + 乾糧 + 水</td></tr>
+</table>
+</div>
+</div>
+
+<div class="section-num">SECTION 00.3</div>
+<h3>圖例</h3>
+<div class="legend">
+<span><span class="dot" style="background:var(--accent-primary)"></span>一般行程</span>
+<span><span class="dot" style="background:var(--accent-warning)"></span>用餐</span>
+<span><span class="dot" style="background:var(--accent-tertiary)"></span>駕駛/移動</span>
+<span><span class="dot" style="background:var(--accent-danger)"></span>警告/死線</span>
+</div>
+</section>
+
+<!-- ============ MAP + ROUTE ============ -->
+<section class="day" data-d="map">
+<div class="day-head"><div><div class="num">SECTION 00.5 · MAP</div><h2>地圖 + <span class="acc">動線圖</span></h2><div class="date">GEOGRAPHIC OVERVIEW</div></div></div>
+
+<div class="callout info">
+<span class="lab">💡 關於 NotebookLM</span>
+NotebookLM 是 Google 的 <b>文字研究與播客生成</b> 工具，<b>無法生成地圖或動線圖</b>。本節改用以下三種更實用的工具：
+<ol style="margin:6px 0 0 18px;font-size:13px">
+<li><b>KML 檔案</b> → 匯入 Google My Maps，得到含 20+ 個圖釘 + 路線的真實互動地圖 (免費，可在手機 Google Maps 開啟)</li>
+<li><b>SVG 動線示意圖</b> (下方) → 顯示 6 日的地理流向</li>
+<li><b>每個地點 Google Maps 連結</b> → 直接複製到車載 GPS 或手機導航</li>
+</ol>
+</div>
+
+<div class="section-num">SECTION 00.5.1 · 互動地圖 (下載匯入)</div>
+<h3>Google My Maps 匯入步驟</h3>
+<ol style="margin:8px 0 12px 22px;font-size:13px;color:var(--text-secondary);line-height:1.9">
+<li>下載 <b>fukuoka-route.kml</b> 檔案 (從 Shared Drive 同一資料夾)</li>
+<li>開啟 <a href="https://www.google.com/mymaps" style="color:var(--accent-primary)">google.com/mymaps</a> → 「+ 建立新地圖」</li>
+<li>左上角「匯入」→ 選擇 fukuoka-route.kml</li>
+<li>所有 20+ 個地點 + 6 日分色 (Day 1-6 不同顏色) 即時呈現</li>
+<li>手機版 Google Maps 登入相同帳號 → 「已儲存」→「地圖」即可離線查看</li>
+</ol>
+<a href="fukuoka-route.kml" class="dl-btn" download>📥 下載 KML</a>
+<a href="https://www.google.com/mymaps" target="_blank" class="dl-btn alt">→ 開啟 Google My Maps</a>
+
+<div class="section-num">SECTION 00.5.2 · 動線示意圖</div>
+<h3>6 日地理流向 (SVG 示意 · 非比例)</h3>
+<div class="svg-map">
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+</marker>
+</defs>
+<!-- background -->
+<rect width="800" height="480" fill="#f7f9fb"/>
+<text x="20" y="30" font-family="Inter" font-size="13" font-weight="700" fill="#1a1a2e">福岡 6 日 5 夜 · 地理動線示意圖</text>
+<text x="20" y="46" font-family="Fira Code" font-size="9" fill="#888">SCHEMATIC · NOT TO SCALE</text>
+
+<!-- regions -->
+<rect x="60" y="120" width="280" height="200" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+<text x="70" y="138" font-family="Inter" font-size="10" fill="#0e7490" font-weight="600">福岡市 / 博多區</text>
+
+<rect x="60" y="80" width="200" height="40" fill="#dcfce7" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+<text x="70" y="98" font-family="Inter" font-size="10" fill="#166534" font-weight="600">海之中道 / 志賀島 (北)</text>
+
+<rect x="60" y="340" width="200" height="40" fill="#fef3c7" stroke="#eab308" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+<text x="70" y="358" font-family="Inter" font-size="10" fill="#92400e" font-weight="600">糸島 / 能古島 (西)</text>
+
+<rect x="500" y="80" width="280" height="320" fill="#ede9fe" stroke="#a78bfa" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+<text x="510" y="98" font-family="Inter" font-size="10" fill="#5b21b6" font-weight="600">大分縣 (東 · 山區)</text>
+
+<!-- HOTEL center -->
+<circle cx="200" cy="220" r="12" fill="#1a3a4a"/>
+<text x="200" y="225" font-family="Inter" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">★</text>
+<text x="200" y="248" font-family="Inter" font-size="10" fill="#1a3a4a" text-anchor="middle" font-weight="600">千代 HOTEL</text>
+
+<!-- Day 1 nodes -->
+<circle cx="290" cy="245" r="7" fill="#3d6bff"/><text x="290" y="265" font-family="Fira Code" font-size="9" fill="#3d6bff" text-anchor="middle">FUK</text>
+<circle cx="200" cy="200" r="6" fill="#3d6bff"/><text x="200" y="190" font-family="Fira Code" font-size="9" fill="#3d6bff" text-anchor="middle">BRANCH</text>
+<circle cx="160" cy="220" r="6" fill="#3d6bff"/><text x="135" y="225" font-family="Fira Code" font-size="9" fill="#3d6bff" text-anchor="end">港塔</text>
+<circle cx="180" cy="245" r="6" fill="#3d6bff"/><text x="155" y="250" font-family="Fira Code" font-size="9" fill="#3d6bff" text-anchor="end">豐一</text>
+
+<!-- Day 1 arrows -->
+<path d="M 285,243 L 215,225" stroke="#3d6bff" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+<path d="M 200,210 L 200,212" stroke="#3d6bff" stroke-width="1.5" fill="none"/>
+<path d="M 195,210 L 165,218" stroke="#3d6bff" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+<path d="M 165,228 L 180,242" stroke="#3d6bff" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+
+<!-- Day 2 nodes -->
+<circle cx="120" cy="100" r="8" fill="#22c55e"/><text x="120" y="80" font-family="Fira Code" font-size="9" fill="#15803d" text-anchor="middle">海之中道</text>
+<circle cx="80" cy="100" r="7" fill="#22c55e"/><text x="80" y="80" font-family="Fira Code" font-size="9" fill="#15803d" text-anchor="middle">志賀島</text>
+<circle cx="180" cy="270" r="6" fill="#22c55e"/><text x="180" y="285" font-family="Fira Code" font-size="9" fill="#15803d" text-anchor="middle">肉いち</text>
+<path d="M 200,210 L 120,108" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+<path d="M 113,100 L 88,100" stroke="#22c55e" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+<path d="M 80,108 L 195,260" stroke="#22c55e" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+
+<!-- Day 3 nodes (right side) -->
+<circle cx="700" cy="140" r="9" fill="#4565e9"/><text x="700" y="125" font-family="Fira Code" font-size="9" fill="#1e40af" text-anchor="middle">SAFARI</text>
+<circle cx="730" cy="200" r="7" fill="#4565e9"/><text x="745" y="205" font-family="Fira Code" font-size="9" fill="#1e40af">別府</text>
+<circle cx="640" cy="260" r="9" fill="#4565e9"/><text x="640" y="280" font-family="Fira Code" font-size="9" fill="#1e40af" text-anchor="middle">九重夢</text>
+<circle cx="450" cy="320" r="7" fill="#4565e9"/><text x="450" y="340" font-family="Fira Code" font-size="9" fill="#1e40af" text-anchor="middle">鳥栖 OUTLET</text>
+<path d="M 215,215 Q 450,80 695,138" stroke="#4565e9" stroke-width="1.8" fill="none" marker-end="url(#arr)"/>
+<path d="M 705,150 L 728,192" stroke="#4565e9" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+<path d="M 723,205 L 650,256" stroke="#4565e9" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+<path d="M 632,265 L 460,318" stroke="#4565e9" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+<path d="M 442,320 Q 320,330 215,228" stroke="#4565e9" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+
+<!-- Day 4 nodes -->
+<circle cx="100" cy="360" r="8" fill="#eab308"/><text x="100" y="380" font-family="Fira Code" font-size="9" fill="#92400e" text-anchor="middle">糸島</text>
+<circle cx="160" cy="340" r="6" fill="#eab308"/><text x="140" y="345" font-family="Fira Code" font-size="9" fill="#92400e" text-anchor="end">姪浜港</text>
+<circle cx="140" cy="380" r="7" fill="#eab308"/><text x="140" y="402" font-family="Fira Code" font-size="9" fill="#92400e" text-anchor="middle">能古島</text>
+<circle cx="190" cy="195" r="6" fill="#eab308"/><text x="220" y="195" font-family="Fira Code" font-size="9" fill="#92400e">天神</text>
+<circle cx="195" cy="205" r="5" fill="#eab308"/><text x="220" y="208" font-family="Fira Code" font-size="9" fill="#92400e">稚加榮</text>
+<path d="M 192,228 L 105,355" stroke="#eab308" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+<path d="M 108,358 L 155,344" stroke="#eab308" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+<path d="M 158,348 L 142,372" stroke="#eab308" stroke-width="1.2" fill="none" marker-end="url(#arr)" stroke-dasharray="3,2"/>
+<path d="M 145,375 Q 170,290 195,205" stroke="#eab308" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+
+<!-- Day 5 nodes -->
+<circle cx="170" cy="270" r="6" fill="#a78bfa"/><text x="155" y="282" font-family="Fira Code" font-size="9" fill="#5b21b6" text-anchor="end">動物園</text>
+<circle cx="225" cy="225" r="5" fill="#a78bfa"/><text x="245" y="225" font-family="Fira Code" font-size="9" fill="#5b21b6">博多站</text>
+<circle cx="240" cy="240" r="6" fill="#a78bfa"/><text x="260" y="245" font-family="Fira Code" font-size="9" fill="#5b21b6">大東園</text>
+<path d="M 195,222 L 173,266" stroke="#a78bfa" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+<path d="M 175,270 L 222,228" stroke="#a78bfa" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+<path d="M 228,228 L 238,238" stroke="#a78bfa" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+
+<!-- Day 6 -->
+<circle cx="170" cy="200" r="5" fill="#6366f1"/><text x="170" y="178" font-family="Fira Code" font-size="9" fill="#4338ca" text-anchor="middle">櫛田</text>
+<path d="M 200,210 L 173,202" stroke="#6366f1" stroke-width="1.2" fill="none" marker-end="url(#arr)"/>
+<path d="M 173,202 L 285,243" stroke="#6366f1" stroke-width="1.5" fill="none" marker-end="url(#arr)" stroke-dasharray="4,3"/>
+
+<!-- legend -->
+<g transform="translate(540,420)">
+<circle cx="0" cy="0" r="5" fill="#3d6bff"/><text x="10" y="3" font-family="Fira Code" font-size="9" fill="#1a1a2e">D1</text>
+<circle cx="40" cy="0" r="5" fill="#22c55e"/><text x="50" y="3" font-family="Fira Code" font-size="9" fill="#1a1a2e">D2</text>
+<circle cx="80" cy="0" r="5" fill="#4565e9"/><text x="90" y="3" font-family="Fira Code" font-size="9" fill="#1a1a2e">D3</text>
+<circle cx="120" cy="0" r="5" fill="#eab308"/><text x="130" y="3" font-family="Fira Code" font-size="9" fill="#1a1a2e">D4</text>
+<circle cx="160" cy="0" r="5" fill="#a78bfa"/><text x="170" y="3" font-family="Fira Code" font-size="9" fill="#1a1a2e">D5</text>
+<circle cx="200" cy="0" r="5" fill="#6366f1"/><text x="210" y="3" font-family="Fira Code" font-size="9" fill="#1a1a2e">D6</text>
+<circle cx="245" cy="0" r="6" fill="#1a3a4a"/><text x="255" y="3" font-family="Fira Code" font-size="9" fill="#1a1a2e">HOTEL</text>
+</g>
+</svg>
+</div>
+
+<div class="callout warn">
+<span class="lab">⚠️ 動線觀察</span>
+Day 3 (藍色) 是最長最遠的單日線 — 共 360+ km。Day 4 (黃色) 是最分散的一日，包含西邊糸島 + 西南離島 + 市中心三段。其餘 Day 1, 2, 5, 6 動線都集中在 20 km 內的福岡市範圍。
+</div>
+</section>
+
+<!-- ============ LOCATIONS REFERENCE ============ -->
+<section class="day" data-d="locations">
+<div class="day-head"><div><div class="num">SECTION 00.6 · LOCATIONS</div><h2>地點 <span class="acc">總表</span></h2><div class="date">MAP CODES · HOURS · LINKS</div></div></div>
+
+<div class="callout dan">
+<span class="lab">⚠️ MAP CODE 驗證結果</span>
+經實證查核 (Mapion / 官方旅遊網站 / Tabelog)，<b>22 個地點中只有 3 個能找到公開且可靠的 Map Code</b>。日本車載 GPS 真正可靠的定位方法 (在地人也用這個)：<b>電話番号検索 (Phone Number Search)</b> — 在 nav 輸入下表電話號碼即可。第二可靠是 <b>住所検索 (Address Search)</b>。Map Code 只在已驗證 ✓ 的 3 個項目顯示，其餘已移除避免誤導。
+</div>
+<div class="callout warn">
+<span class="lab">⚠️ 兩處地點待確認</span>
+① <b>大東園 本店</b> 真實地址是 <b>博多区上川端町 1-1-1 (近櫛田神社)</b>，<b>不是</b>博多駅東 — 博多駅東是分店。請確認您要訂的是哪一家。<br>
+② <b>博多豐一</b> 主店在 Bayside Place (博多港，與 Day 1 博多港塔同區)，<b>不是中洲</b>。若主店則 Day 1 動線更順 (港塔→豐一同區)。
+</div>
+
+<div class="section-num">SECTION 00.6.1 · 住宿與機場</div>
+<table class="summary-tbl locref-tbl">
+<thead><tr><th>地點</th><th>電話 (nav 輸入)</th><th>營業</th><th>地址 / Google Maps</th></tr></thead>
+<tbody>
+<tr><td><b>★ 千代 酒店</b></td><td class="mc">(住宿確認單)</td><td>24h</td><td><a href="https://www.google.com/maps/search/?api=1&query=3-5-13+Chiyo+Hakata-ku+Fukuoka" target="_blank">3-5-13 Chiyo, Hakata-ku ↗</a></td></tr>
+<tr><td><b>福岡空港 國際線</b></td><td class="mc">092-621-6059</td><td>24h</td><td><a href="https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal" target="_blank">下臼井 778-1 ↗</a></td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.6.2 · Day 1 · 抵達日</div>
+<table class="summary-tbl locref-tbl">
+<thead><tr><th>地點</th><th>電話 (nav 輸入)</th><th>營業</th><th>地址 / Google Maps</th></tr></thead>
+<tbody>
+<tr><td>BRANCH 博多パピヨンガーデン</td><td class="mc">092-409-1188</td><td>10:00–22:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=BRANCH+博多パピヨンガーデン" target="_blank">千代 1-2-1 ↗</a> · 685 位</td></tr>
+<tr><td>博多港塔</td><td class="mc">092-291-0573</td><td>10:00–22:00 (週三休)</td><td><a href="https://www.google.com/maps/search/?api=1&query=博多ポートタワー" target="_blank">築港本町 14-1 ↗</a> · 免費</td></tr>
+<tr><td>🍣 博多豐一 ⚠️</td><td class="mc">092-281-0001 (Bayside)</td><td>17:00–23:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=博多豊一+ベイサイドプレイス" target="_blank">博多港 Bayside Place ↗</a> · 與港塔同區</td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.6.3 · Day 2 · 海之中道</div>
+<table class="summary-tbl locref-tbl">
+<thead><tr><th>地點</th><th>電話 (nav 輸入)</th><th>營業</th><th>地址 / Google Maps</th></tr></thead>
+<tbody>
+<tr><td>海之中道海濱公園</td><td class="mc">092-603-1111</td><td>9:30–17:30</td><td><a href="https://www.google.com/maps/search/?api=1&query=海の中道海浜公園" target="_blank">東区西戸崎 18-25 ↗</a> · ¥450 · <b>Map Code ✓ 13 552 595*21</b> (公園中心)</td></tr>
+<tr><td>動物之森 (園內)</td><td class="mc">同上</td><td>同上</td><td><a href="https://www.google.com/maps/search/?api=1&query=動物の森+海の中道" target="_blank">海之中道園內 ↗</a></td></tr>
+<tr><td>志賀島 中西食堂</td><td class="mc">092-603-6546</td><td>11:00–15:00 (週二休)</td><td><a href="https://www.google.com/maps/search/?api=1&query=志賀島+中西食堂" target="_blank">東区志賀島 877 ↗</a></td></tr>
+<tr><td>🥩 肉いち 藥院店</td><td class="mc">092-522-4129</td><td>17:00–24:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=肉いち+薬院" target="_blank">中央区藥院 ↗</a></td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.6.4 · Day 3 · 大分長征</div>
+<table class="summary-tbl locref-tbl">
+<thead><tr><th>地點</th><th>電話 (nav 輸入)</th><th>營業</th><th>地址 / Google Maps</th></tr></thead>
+<tbody>
+<tr><td>九州自然動物公園 African Safari</td><td class="mc">0978-48-2331</td><td>9:30–16:30</td><td><a href="https://www.google.com/maps/search/?api=1&query=九州自然動物公園アフリカンサファリ" target="_blank">宇佐市安心院町南畑 2-1755-1 ↗</a></td></tr>
+<tr><td>🍗 別府 東洋軒</td><td class="mc">0977-23-3333</td><td>11:00–15:00 / 17:00–21:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=東洋軒+別府" target="_blank">別府市石垣東 7-8-22 ↗</a></td></tr>
+<tr><td>九重夢大吊橋</td><td class="mc">0973-73-3800</td><td>8:30–17:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=九重夢大吊橋" target="_blank">玖珠郡九重町田野 1208 ↗</a> · ¥500</td></tr>
+<tr><td>鳥栖 Premium Outlets</td><td class="mc">0942-87-7370</td><td>10:00–20:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=鳥栖プレミアムアウトレット" target="_blank">鳥栖市彌生が丘 8-1 ↗</a> · 5,000 位 · <b>Map Code ✓ 37 856 350*05</b></td></tr>
+<tr><td>🍜 牧のうどん 鳥栖店</td><td class="mc">0942-84-5411</td><td>10:00–22:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=牧のうどん+鳥栖" target="_blank">鳥栖市古野町 ↗</a></td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.6.5 · Day 4 · 糸島 + 能古島 + 天神</div>
+<table class="summary-tbl locref-tbl">
+<thead><tr><th>地點</th><th>電話 (nav 輸入)</th><th>營業</th><th>地址 / Google Maps</th></tr></thead>
+<tbody>
+<tr><td>櫻井二見浦 (夫婦岩)</td><td class="mc">092-322-2098 (糸島市觀光)</td><td>24h (戶外)</td><td><a href="https://www.google.com/maps/search/?api=1&query=櫻井二見浦+夫婦岩" target="_blank">糸島市志摩桜井 ↗</a> · <b>Map Code ✓ 224 788 174*06</b> (停車場)</td></tr>
+<tr><td>姪浜渡船場</td><td class="mc">092-881-8709</td><td>06:15–21:45</td><td><a href="https://www.google.com/maps/search/?api=1&query=姪浜旅客待合所" target="_blank">西区姪浜 4-13-1 ↗</a> · 汽車 ¥5,040 RT</td></tr>
+<tr><td>能古島海島公園</td><td class="mc">092-881-2494</td><td>9:00–17:30</td><td><a href="https://www.google.com/maps/search/?api=1&query=のこのしまアイランドパーク" target="_blank">西区能古 1624 ↗</a> · ¥1,200</td></tr>
+<tr><td>天神 PARCO</td><td class="mc">092-235-7000</td><td>10:00–20:30</td><td><a href="https://www.google.com/maps/search/?api=1&query=天神PARCO" target="_blank">中央区天神 2-11-1 ↗</a></td></tr>
+<tr><td>🍣 稚加榮 本店</td><td class="mc">092-721-4624</td><td>11:00–22:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=稚加榮+本店" target="_blank">中央区大名 1-4-62 ↗</a> · 個室預約</td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.6.6 · Day 5 · 市區慢遊</div>
+<table class="summary-tbl locref-tbl">
+<thead><tr><th>地點</th><th>電話 (nav 輸入)</th><th>營業</th><th>地址 / Google Maps</th></tr></thead>
+<tbody>
+<tr><td>福岡市動物園</td><td class="mc">092-531-1968</td><td>9:00–17:00 (週一休)</td><td><a href="https://www.google.com/maps/search/?api=1&query=福岡市動物園" target="_blank">中央区南公園 1-1 ↗</a> · ¥600</td></tr>
+<tr><td>JR 博多 City</td><td class="mc">092-431-8484</td><td>10:00–21:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=JR博多シティ" target="_blank">博多区博多駅中央街 1-1 ↗</a></td></tr>
+<tr><td>🥩 大東園 本店 ⚠️</td><td class="mc">092-282-0055</td><td>17:00–23:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=大東園+上川端町" target="_blank">博多区上川端町 1-1-1 ↗</a> · <b>近櫛田神社，非博多駅東</b></td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.6.7 · Day 6 · 離開</div>
+<table class="summary-tbl locref-tbl">
+<thead><tr><th>地點</th><th>電話 (nav 輸入)</th><th>營業</th><th>地址 / Google Maps</th></tr></thead>
+<tbody>
+<tr><td>櫛田神社</td><td class="mc">092-291-2951</td><td>4:00–22:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=櫛田神社+博多" target="_blank">博多区上川端町 1-41 ↗</a></td></tr>
+<tr><td>川端商店街</td><td class="mc">092-281-6223</td><td>~10:00–20:00</td><td><a href="https://www.google.com/maps/search/?api=1&query=博多川端商店街" target="_blank">博多区上川端町 ↗</a></td></tr>
+<tr><td>機場周邊 ENEOS (加油)</td><td class="mc">當日 Google 搜尋</td><td>24h</td><td><a href="https://www.google.com/maps/search/?api=1&query=ENEOS+福岡空港" target="_blank">福岡空港周邊 ↗</a></td></tr>
+</tbody></table>
+
+<div class="callout ok">
+<span class="lab">✅ 已驗證 Map Code (3 個)</span>
+<b>海之中道海濱公園</b>：13 552 595*21 (公園中心) · <b>鳥栖 Premium Outlets</b>：37 856 350*05 · <b>櫻井二見浦</b>：224 788 174*06 (停車場)。<br>
+其餘 19 個地點：請用上表電話號碼於車載 nav 「電話番号検索」輸入。</div>
+
+<div class="callout info">
+<span class="lab">💡 Scott 取車時必做</span>
+取車後第一時間：① 設定中文/英文介面 ② 測試「電話番号検索」功能 ③ 預先輸入 4/19 Day 3 Safari 電話 0978-48-2331 並儲存為「目的地 1」 ④ 確認 ETC 卡已插入</div>
+</section>
+
+<!-- ============ DAY 1 ============ -->
+<section class="day" data-d="1">
+<div class="day-head">
+  <div><div class="num">DAY 01 · ARRIVAL</div><h2>抵達 · BRANCH 補給 · 博多<span class="acc">港塔</span></h2><div class="date">2026-04-17 (FRI)</div></div>
+  <div class="wx"><b>17°C</b>晴 / 體感涼<br>降雨 15%</div>
+</div>
+
+<div class="callout dan">
+<span class="lab">⚠️ DAY 1 行李硬傷 — 已解決</span>
+<b>問題：</b>Serena 8 人座 7 人滿載時，後尾箱僅剩約 15 cm 深，<b>無法容納 4 × 28″ + 1 × 22″ 行李</b>。<br>
+<b>方案：</b>分兩車到酒店 →
+<ol style="margin:6px 0 0 18px;font-size:13px">
+<li><b>Serena</b>：Scott + 4 大人 + 幼童 (5 人) + 1 × 22″ 隨身行李 → 千代</li>
+<li><b>MK Skygate Jumbo Taxi</b> (9 人座)：2 大人 + 4 × 28″ → 千代 (約 ¥5,000，10–15 分鐘)</li>
+</ol>
+<b>必須：</b>4/16 (四) 17:00 前於 mktaxi-japan.com/fukuoka 預約 Jumbo Taxi。
+</div>
+
+<div class="callout ok">
+<span class="lab">💡 KEY INSIGHT</span>
+<b>BRANCH 博多パピヨンガーデン 與酒店相距僅 5 分鐘步行 (千代 1-2-1 vs 千代 3-5-13)。</b>放下行李後直接<b>步行</b>前往 BRANCH，避免原計劃中駕駛+找泊車的時間浪費。
+</div>
+
+<div class="callout info">
+<span class="lab">💡 OPTION B · Yamato 宅急便 (替代方案)</span>
+若不想搭 Jumbo Taxi 分流，可用 <b>Yamato 黑貓宅急便</b>：福岡空港 1F 櫃台寄大件行李直送酒店，<b>¥1,600–2,000/件</b>，次日中午前送達。
+<br>✅ 優點：首日 Serena 輕裝即玩、省分流麻煩<br>
+⚠️ 缺點：當晚無法取用該行李內容 (必須自備當晚隨身換洗衣物於機艙手提袋)
+</div>
+
+<div class="section-num">SECTION 01.1 · MEALS</div>
+<h3>🍽 用餐建議</h3>
+<div class="meals">
+<div class="meal-card skip"><span class="meal-icon">🌅</span><div class="meal-slot">早餐</div><span class="meal-name">機上</span><em>15:20 抵達</em></div>
+<div class="meal-card skip"><span class="meal-icon">🍱</span><div class="meal-slot">午餐</div><span class="meal-name">機上</span><em>—</em></div>
+<div class="meal-card"><span class="meal-icon">🍰</span><div class="meal-slot">下午茶</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=BRANCH+博多パピヨンガーデン+Starbucks" target="_blank">BRANCH Starbucks</a><em>補給後順便 17:30</em></div>
+<div class="meal-card"><span class="meal-icon">🍣</span><div class="meal-slot">晚餐 · 魚生 1/2</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=博多豊一+ベイサイドプレイス" target="_blank">博多豐一</a><em>20:10 · Bayside Place</em></div>
+</div>
+
+<div class="section-num">SECTION 01.2 · TIMELINE</div>
+<h3>分鐘級時間軸</h3>
+<ul class="tl">
+<li class="drive"><span class="t">15:20</span><span class="h">UO558 抵達 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=福岡空港+国際線ターミナル" target="_blank">福岡空港 國際線</a></span><span class="det"><span class="meta">Terminal 國際線</span>下機後 → 入境 → 領行李 → 過關 (高峰約 40–50 分鐘)</span></li>
+<li><span class="t">15:30</span><span class="h">Scott 已預先取車</span><span class="det">Scott 應於航班抵達前 1 小時取車，並安裝 <b>幼童安全座椅</b> (法定 6 歲以下必須)。停泊國際線到着出口</span></li>
+<li><span class="t">16:10</span><span class="h">入境完成 · 出口集合</span><span class="det">2 名負責行李成人 → MK Jumbo Taxi 預約點 (1F TAXI 乘場)；其餘 5 人 → Serena</span></li>
+<li class="drive"><span class="t">16:20</span><span class="h">兩車分別出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=3-5-13+Chiyo+Hakata-ku+Fukuoka" target="_blank">千代酒店</a></span><span class="det"><span class="meta">FUK → 千代 約 3.5 km / 10–15 分鐘</span><span class="tag drive">DRIVE</span> 福岡都市高速可走可不走，平日下午建議走國道 3 號免費路</span></li>
+<li><span class="t">16:40</span><span class="h">千代住宿 Check-in</span><span class="det">3-chōme-5-13 Chiyo, Hakata-ku · 兩車於酒店前集合 → 卸下所有行李 → 簡單梳洗 → 幼童換尿布</span></li>
+<li><span class="t">17:15</span><span class="h">步行前往 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=BRANCH+博多パピヨンガーデン" target="_blank">BRANCH 博多パピヨンガーデン</a></span><span class="det"><span class="meta">5 分鐘步行</span>地址 千代 1-2-1 · 7 人含推車輕鬆步行可達，免泊車費用</span></li>
+<li><span class="t">17:30</span><span class="h">🛒 BRANCH 補給</span><span class="det"><span class="tag">SHOP</span><b>必訪：西松屋</b>(幼童外套、防風帽、零食、尿布、濕紙巾)、<b>業務スーパー</b>(車上零食、礦泉水、飯糰)、藥妝。預算 1.5 小時</span></li>
+<li class="drive"><span class="t">19:00</span><span class="h">步行回酒店 · 取車</span><span class="det">將補給品放回房間，全員 7 人上 Serena 出發</span></li>
+<li class="drive"><span class="t">19:10</span><span class="h">駕車前往 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=博多ポートタワー" target="_blank">博多港塔</a></span><span class="det"><span class="meta">2.5 km / 8 分鐘</span>地址 博多区築港本町 14-1 · 免費入場 · 免費停車 ~50 位</span></li>
+<li><span class="t">19:20</span><span class="h">📸 博多港塔 觀景台</span><span class="det">入場免費 · 開放至 22:00 · 100m 高觀景台 · 夜景打卡 30 分鐘 · 適合幼童 (有電梯)</span></li>
+<li class="drive"><span class="t">19:55</span><span class="h">駕車前往 晚餐</span><span class="det"><span class="meta">2.5 km / 8 分鐘</span>港塔 → Bayside Place (若主店)</span></li>
+<li class="eat"><span class="t">20:10</span><span class="h">🍣 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=博多豊一+ベイサイドプレイス" target="_blank">博多豐一</a> (晚餐 · 魚生 1/2)</span><span class="det"><span class="tag eat">魚生</span><span class="tag book">已預約</span>非商場 · 大量生簀活魚 · 推薦：盛合刺身、活烏賊、明太子 · 預算 ¥6,000/人 · 預約時聲明 7 人含 1 幼童 (需兒童椅)</span></li>
+<li class="drive"><span class="t">22:00</span><span class="h">回千代休息</span><span class="det"><span class="meta">3 km / 10 分鐘</span>酒店附近 24 小時 Times 收費停車場 ¥1,000/夜 (待確認酒店是否含車位)</span></li>
+</ul>
+
+<div class="section-num">SECTION 01.2</div>
+<div class="grid2">
+  <div class="infocard">
+    <h4>BRANCH 博多パピヨンガーデン</h4>
+    <table>
+      <tr><td>地址</td><td>千代 1-2-1</td></tr>
+      <tr><td>營業</td><td>10:00–22:00</td></tr>
+      <tr><td>停車</td><td>685 位 · 購物減免</td></tr>
+      <tr><td>距酒店</td><td>步行 5 分鐘</td></tr>
+      <tr><td>必訪</td><td>西松屋 · 業務超市 · DAISO</td></tr>
+    </table>
+  </div>
+  <div class="infocard">
+    <h4>博多港塔 Hakata Port Tower</h4>
+    <table>
+      <tr><td>地址</td><td>博多区築港本町 14-1</td></tr>
+      <tr><td>營業</td><td>10:00–22:00 (週三休)</td></tr>
+      <tr><td>入場</td><td>免費</td></tr>
+      <tr><td>停車</td><td>免費 ~50 位</td></tr>
+      <tr><td>注意</td><td>4/22 為週三，記下此安排</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="callout warn">
+<span class="lab">⚠️ 預訂提醒</span>
+博多豐一是熱門海鮮居酒屋，<b>必須提前 1–2 週預約</b>。電話 092-411-3208 (須核實) · 預約時必須說明：① 7 人 ② 含 1 幼童 ③ 需嬰兒椅 ④ 從機場直接來，可能略遲。
+</div>
+</section>
+
+<!-- ============ DAY 2 ============ -->
+<section class="day" data-d="2">
+<div class="day-head">
+  <div><div class="num">DAY 02 · COASTAL</div><h2>海之中道 · 志賀島 · <span class="acc">燒肉一</span></h2><div class="date">2026-04-18 (SAT)</div></div>
+  <div class="wx"><b>19°C</b>多雲<br>降雨 20%</div>
+</div>
+
+<div class="callout info">
+<span class="lab">💡 STRATEGY</span>
+週六上午本應人潮洶湧，但海之中道是大型公園 (~540 公頃)，分散度極高，週六只要在 <b>10:00 開園即抵達</b> 即可避開人潮峰值。志賀島在園區東側 6 km，自駕無壓力。
+</div>
+
+<div class="section-num">SECTION 02.1 · MEALS</div>
+<h3>🍽 用餐建議</h3>
+<div class="meals">
+<div class="meal-card"><span class="meal-icon">🌅</span><div class="meal-slot">早餐</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=Mister+Donut+千代+博多" target="_blank">Mister Donut 千代店</a><em>08:00 · 步行 / 酒店</em></div>
+<div class="meal-card"><span class="meal-icon">🍱</span><div class="meal-slot">午餐 · 必吃</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=志賀島+中西食堂" target="_blank">中西食堂 榮螺丼</a><em>13:00 · 志賀島 · 不接受預約</em></div>
+<div class="meal-card"><span class="meal-icon">🍰</span><div class="meal-slot">下午茶 (可選)</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=海の中道海浜公園+Cafe" target="_blank">園內 Marine cafe</a><em>14:30 · 若不回酒店午睡</em></div>
+<div class="meal-card"><span class="meal-icon">🥩</span><div class="meal-slot">晚餐 · 燒肉 1/2</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=肉いち+薬院" target="_blank">肉いち 藥院店</a><em>18:30 · 已預約</em></div>
+</div>
+
+<div class="section-num">SECTION 02.2 · TIMELINE</div>
+<ul class="tl">
+<li><span class="t">08:00</span><span class="h">早餐於酒店 / <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=Mister+Donut+千代" target="_blank">Mister Donut 千代店</a></span><span class="det">幼童餵食 · 大人快速早餐</span></li>
+<li class="drive"><span class="t">09:30</span><span class="h">出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=海の中道海浜公園" target="_blank">海之中道海濱公園</a></span><span class="det"><span class="meta">22 km / 35 分鐘</span><span class="tag drive">DRIVE</span>海之中道大橋路線 · 車上預備幼童飯糰</span></li>
+<li><span class="t">10:05</span><span class="h">抵達海之中道 西口/動物之森口</span><span class="det">停車 ¥600/日 (3,100 位充裕) · 入園費 大人 ¥450 / 中學生以下免費 · 推車入口可借</span></li>
+<li><span class="t">10:15</span><span class="h">🦁 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=動物の森+海の中道" target="_blank">動物之森 (Animal Forest)</a></span><span class="det">水豚、袋鼠、栗鼠、羊駝 · 可餵食 · 適合幼童放電 · 預算 1.5–2 小時</span></li>
+<li><span class="t">12:00</span><span class="h">園內小火車 / 草地野餐</span><span class="det">花圃 (4 月鬱金香尾季) · 約 30 分鐘</span></li>
+<li class="drive"><span class="t">12:30</span><span class="h">駕車 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=志賀島" target="_blank">志賀島</a></span><span class="det"><span class="meta">8 km / 15 分鐘</span>沿海公路風景一流 · 中途可短停金印公園</span></li>
+<li class="eat"><span class="t">13:00</span><span class="h">🍤 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=志賀島+中西食堂" target="_blank">中西食堂</a> (午餐)</span><span class="det"><span class="tag eat">海鮮丼</span>地址 志賀島 877 · 11:00–15:00 (LO 14:30) · 週二休 · 必點：榮螺丼 (サザエ丼) · 預算 ¥1,800/人 · <b>不接受預約，13:00 抵達高峰</b></span></li>
+<li><span class="t">14:30</span><span class="h">志賀島環島短遊</span><span class="det">金印公園 · 海之家 · 拍照 30–45 分鐘</span></li>
+<li class="drive"><span class="t">15:30</span><span class="h">駕車回千代</span><span class="det"><span class="meta">28 km / 45 分鐘</span>幼童車上午睡時段</span></li>
+<li><span class="t">16:15</span><span class="h">回酒店 · 幼童正式午睡</span><span class="det">大人輪流休息 · 此 2 小時是維持幼童下午狀態的關鍵</span></li>
+<li class="drive"><span class="t">18:00</span><span class="h">出發 → 藥院</span><span class="det"><span class="meta">4 km / 12 分鐘</span>於藥院站附近 Times 停車場 ¥400/小時</span></li>
+<li class="eat"><span class="t">18:30</span><span class="h">🥩 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=肉いち+薬院" target="_blank">にく屋 肉いち 藥院店</a> (晚餐 · 燒肉 1/2)</span><span class="det"><span class="tag eat">和牛燒肉</span><span class="tag book">已預約</span>非商場 · A5 黑毛和牛 · 推薦：上タン鹽、特上ロース · 預算 ¥10,000/人 · Tel 092-522-4129 · 預約時聲明 7 人含 1 幼童</span></li>
+<li class="drive"><span class="t">21:00</span><span class="h">回千代</span><span class="det">幼童早睡 · 預備 Day 3 大分長征</span></li>
+</ul>
+
+<div class="callout warn">
+<span class="lab">⚠️ DAY 2 注意</span>
+中西食堂 <b>週二定休</b>，4/18 (六) 營業正常但 12:30–13:30 為高峰。建議 12:50 抵達取號。若大排長龍可備案改為志賀島休暇村食堂或回博多吃。
+</div>
+</section>
+
+<!-- ============ DAY 3 ============ -->
+<section class="day" data-d="3">
+<div class="day-head">
+  <div><div class="num">DAY 03 · OITA EPIC</div><h2>Safari · 九重夢 · <span class="acc">鳥栖 Outlet</span></h2><div class="date">2026-04-19 (SUN)</div></div>
+  <div class="wx"><b>15°C</b>山區寒涼<br>大分山區風大</div>
+</div>
+
+<div class="callout dan">
+<span class="lab">⚠️ ZERO TOLERANCE — Day 3 死線</span>
+<b>Safari Jungle Bus 官方無網上預約，僅現場購票</b>。週日春季 4 月經常於 <b>11:00 前售罄</b>。保底方案：千代 <b>07:30 準時出發</b>，09:00 開園前到達排隊。任何延誤 = Day 3 全日崩盤。
+</div>
+
+<div class="callout info">
+<span class="lab">💡 OPTION B · Klook 預售票 (出發前 1 週檢查)</span>
+部分 OTA (Klook / KKday) 可能有九州自然動物公園 <b>預售套票或半日遊</b>，若有則可取消 07:30 死線。<br>
+<b>行動：4/12 前</b>到 <a class="loc-link" href="https://www.klook.com/zh-TW/search/result/?query=九州自然動物公園" target="_blank">Klook 搜尋「九州自然動物公園」↗</a> 或致電 0978-48-2331 確認。<br>
+若成功預售 → Day 3 出發可延後至 <b>08:30</b>，幼童作息更舒服。
+</div>
+
+<div class="section-num">SECTION 03.1 · MEALS</div>
+<h3>🍽 用餐建議</h3>
+<div class="meals">
+<div class="meal-card"><span class="meal-icon">🌅</span><div class="meal-slot">早餐 · 外帶</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=Lawson+千代" target="_blank">Lawson 千代店</a><em><b>06:30 takeaway</b> · 飯糰 + 牛奶</em></div>
+<div class="meal-card"><span class="meal-icon">🍱</span><div class="meal-slot">午餐 · 名物</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=東洋軒+別府" target="_blank">別府 東洋軒</a><em>13:00 · とり天元祖</em></div>
+<div class="meal-card"><span class="meal-icon">🍰</span><div class="meal-slot">下午茶 · SA</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=やまなみ牧場" target="_blank">やまなみ牧場 soft cream</a><em>16:45 · 九重山路 SA</em></div>
+<div class="meal-card"><span class="meal-icon">🍜</span><div class="meal-slot">晚餐 · 秒上</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=牧のうどん+鳥栖" target="_blank">牧のうどん 鳥栖店</a><em>19:45 · ごぼう天 ¥600</em></div>
+</div>
+
+<div class="section-num">SECTION 03.2 · TIMELINE</div>
+<ul class="tl">
+<li><span class="t">06:30</span><span class="h">起床 · <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=Lawson+千代" target="_blank">Lawson 早餐外帶</a></span><span class="det">飯糰 + 牛奶 · 幼童先餵食</span></li>
+<li class="warn"><span class="t">07:30</span><span class="h">🚗 千代鋼鐵出發</span><span class="det"><span class="tag warn">死線</span>所有人 + 幼童 + 推車 + 厚衣物已上車 · 預備車上熱飲</span></li>
+<li class="drive"><span class="t">07:30–09:30</span><span class="h">福岡 IC → 九州道 → 宇佐 IC → Safari</span><span class="det"><span class="meta">135 km / 2h00 / 通行料 約 ¥3,800</span>中途於 <b>古賀 SA</b> 或 <b>めかり PA</b> 廁所休息 1 次 · 必補：油</span></li>
+<li><span class="t">09:30</span><span class="h">🦁 抵達 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=九州自然動物公園アフリカンサファリ" target="_blank">九州自然動物公園 African Safari</a></span><span class="det">地址 大分県宇佐市安心院町南畑 2-1755-1 · Tel 0978-48-2331 · 直達 Jungle Bus 售票口購票</span></li>
+<li><span class="t">09:40</span><span class="h">購票 + 排隊</span><span class="det"><span class="tag warn">無預約</span>大人 ¥2,600 (入園) + ¥1,100 (Jungle Bus) · 幼童 4 歲以下免費 (但須抱在大人腿上，不准用推車)</span></li>
+<li><span class="t">10:30–11:30</span><span class="h">🚌 Jungle Bus 體驗 (約 50 分鐘)</span><span class="det">獅子、老虎、熊近距離餵食 · 幼童坐大人膝上 · 注意大窗安全</span></li>
+<li><span class="t">11:30–12:15</span><span class="h">園內步行區 / 動物親親廣場</span><span class="det">兔仔、山羊、小馬等溫順動物 · 推車可用 · 紀念品店</span></li>
+<li class="drive"><span class="t">12:15</span><span class="h">出發 → 別府</span><span class="det"><span class="meta">25 km / 35 分鐘</span>Yamanami Highway 段風景開揚</span></li>
+<li class="eat"><span class="t">13:00</span><span class="h">🍗 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=東洋軒+別府" target="_blank">別府 東洋軒</a> (午餐)</span><span class="det"><span class="tag eat">雞天元祖</span>地址 別府市石垣東 7-8-22 · 11:00–15:00 / 17:00–21:00 · Tel 0977-23-3333 · 必點：とり天定食 ¥1,500 · 83 位停車場 · <b>4/19 為週日，務必先電話確認</b></span></li>
+<li class="drive"><span class="t">14:15</span><span class="h">出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=九重夢大吊橋" target="_blank">九重夢大吊橋</a></span><span class="det"><span class="meta">50 km / 1h15</span>沿 Yamanami Hwy 風景路線 · 海拔升至 ~800m</span></li>
+<li><span class="t">15:30</span><span class="h">🌉 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=九重夢大吊橋" target="_blank">九重夢大吊橋</a></span><span class="det">地址 玖珠郡九重町田野 1208 · 8:30–17:00 · 大人 ¥500 / 兒童 ¥200 / 6 歲以下免費 · 免費停車 275 位 · 全長 390m / 高 173m · 預算 60 分鐘</span></li>
+<li class="warn"><span class="t">15:30</span><span class="h">⚠️ 幼童防風裝備</span><span class="det"><span class="tag warn">山區風大</span>體感比福岡低 6–8°C · 必穿 fleece + 防風外套 + 帽 · 推車不上吊橋，必須抱住</span></li>
+<li class="drive"><span class="t">16:30</span><span class="h">出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=鳥栖プレミアムアウトレット" target="_blank">鳥栖 Premium Outlets</a></span><span class="det"><span class="meta">120 km / 1h45 / 通行料 ~¥3,200</span>中途強制停 <b>山田 SA</b> 讓幼童活動 15 分鐘 · 17:30 補充車上零食</span></li>
+<li><span class="t">18:15</span><span class="h">🛍 鳥栖 Premium Outlets</span><span class="det">10:00–20:00 · 5,000 位免費停車 · 推薦：Coach、Le Creuset、Beams、Onitsuka Tiger · 預算 1.5 小時</span></li>
+<li class="eat"><span class="t">19:45</span><span class="h">🍜 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=牧のうどん+鳥栖" target="_blank">牧のうどん</a> (晚餐)</span><span class="det"><span class="tag eat">福岡名物</span>鳥栖店或回程在博多店 · 秒上菜適合疲累家庭 · ごぼう天うどん ¥600 · 幼童 udon 軟易食</span></li>
+<li class="drive"><span class="t">21:00</span><span class="h">回千代</span><span class="det"><span class="meta">35 km / 45 分鐘</span>幼童車上深睡 · 全日駕駛總計 ~360 km</span></li>
+</ul>
+
+<div class="section-num">SECTION 03.2</div>
+<div class="grid2">
+<div class="infocard">
+<h4>African Safari 關鍵</h4>
+<table>
+<tr><td>無預約</td><td>同日現場購票</td></tr>
+<tr><td>週日危險</td><td>11:00 前售罄</td></tr>
+<tr><td>到達死線</td><td>09:30 前必到</td></tr>
+<tr><td>巴士費</td><td>大人 ¥1,100</td></tr>
+<tr><td>推車</td><td>巴士禁用</td></tr>
+</table>
+</div>
+<div class="infocard">
+<h4>九重夢大吊橋</h4>
+<table>
+<tr><td>海拔</td><td>~777m</td></tr>
+<tr><td>溫差</td><td>比福岡低 6°C</td></tr>
+<tr><td>風速</td><td>橋上常 5+ m/s</td></tr>
+<tr><td>幼童裝備</td><td>必須 fleece + 帽</td></tr>
+<tr><td>停留時間</td><td>60 分鐘</td></tr>
+</table>
+</div>
+</div>
+</section>
+
+<!-- ============ DAY 4 ============ -->
+<section class="day" data-d="4">
+<div class="day-head">
+  <div><div class="num">DAY 04 · ISLAND</div><h2>糸島 · 能古島 · <span class="acc">天神</span></h2><div class="date">2026-04-20 (MON)</div></div>
+  <div class="wx"><b>21°C</b>晴<br>降雨 10%</div>
+</div>
+
+<div class="callout info">
+<span class="lab">💡 STRATEGY · 平日優勢</span>
+週一糸島及能古島人流為週末的 30–40%。塚本鮮魚店 / 二見浦排隊縮短 50%。能古島渡輪可<b>連車上船</b>(¥5,040 來回)，省去離島交通煩惱。
+</div>
+
+<div class="section-num">SECTION 04.1 · MEALS</div>
+<h3>🍽 用餐建議</h3>
+<div class="meals">
+<div class="meal-card"><span class="meal-icon">🌅</span><div class="meal-slot">早餐</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=Tully's+博多" target="_blank">Tully's / Starbucks 博多</a><em>08:00 · 出發前</em></div>
+<div class="meal-card"><span class="meal-icon">🍱</span><div class="meal-slot">午餐 · 島上</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=能古うどん" target="_blank">能古うどん (島上)</a><em>12:45 · ¥1,200/人</em></div>
+<div class="meal-card"><span class="meal-icon">🍰</span><div class="meal-slot">下午茶 · 可選</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=bills+Fukuoka" target="_blank">bills Fukuoka pancake</a><em>16:00 · 天神 · 若有時間</em></div>
+<div class="meal-card"><span class="meal-icon">🍣</span><div class="meal-slot">晚餐 · 魚生 2/2</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=稚加榮+本店" target="_blank">稚加榮 本店 (個室)</a><em>19:00 · 已預約 7 人</em></div>
+</div>
+
+<div class="section-num">SECTION 04.2 · TIMELINE</div>
+<ul class="tl">
+<li><span class="t">08:00</span><span class="h">早餐 · 預備出發</span><span class="det">幼童換衣 · 推車上車 · 防曬</span></li>
+<li class="drive"><span class="t">08:45</span><span class="h">出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=糸島+櫻井二見浦" target="_blank">糸島</a></span><span class="det"><span class="meta">35 km / 50 分鐘 / 通行料 ¥600</span>西九州道 → 前原 IC</span></li>
+<li><span class="t">09:35</span><span class="h">📸 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=櫻井二見浦+夫婦岩" target="_blank">櫻井二見浦</a> (夫婦岩 · 白色鳥居)</span><span class="det">地址 糸島市志摩桜井 · 免費 · 路邊停車 30 位 · 拍照 30–45 分鐘 · <b>沙地，推車不便，建議背帶</b></span></li>
+<li><span class="t">10:30</span><span class="h">糸島彩虹 / 海邊鞦韆 (#しあわせのブランコ)</span><span class="det">Palm Beach 一帶 · 免費 · 海景打卡 30 分鐘</span></li>
+<li class="drive"><span class="t">11:15</span><span class="h">出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=姪浜旅客待合所" target="_blank">姪浜港</a></span><span class="det"><span class="meta">25 km / 35 分鐘</span>沿福岡前原道路</span></li>
+<li><span class="t">11:50</span><span class="h">姪浜港 渡船場 報到</span><span class="det">汽車登船需 <b>提前 30 分鐘</b> 抵達 · 連車費用 <b>¥5,040 來回</b> (4–5m) · 現場排隊購票</span></li>
+<li><span class="t">12:20</span><span class="h">⛴ 渡輪出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=のこのしまアイランドパーク" target="_blank">能古島</a></span><span class="det">航程 10 分鐘 · 7 人成人費 ¥1,610 (大人 ¥230 單程) · 幼童 ¥120 單程 (含車費中)</span></li>
+<li><span class="t">12:30</span><span class="h">抵達能古島</span><span class="det">由港口直接駕車前往島上餐廳</span></li>
+<li class="eat"><span class="t">12:45</span><span class="h">🍜 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=能古うどん" target="_blank">能古うどん</a> (午餐)</span><span class="det"><span class="tag eat">名物</span>能古島限定細烏龍麵 · 預算 ¥1,200/人 · 平日無需排隊</span></li>
+<li><span class="t">13:45</span><span class="h">🌸 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=のこのしまアイランドパーク" target="_blank">能古島海島公園</a></span><span class="det">入園 ¥1,200 / 兒童 ¥600 · 4 月油菜花 + 鬱金香尾季 · 小動物廣場 · 預算 1.5 小時</span></li>
+<li class="drive"><span class="t">15:30</span><span class="h">渡輪回姪浜</span><span class="det">建議搭 15:30 班次 (每小時 1 班) · 連車回程</span></li>
+<li class="drive"><span class="t">16:00</span><span class="h">姪浜 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=天神PARCO" target="_blank">天神</a></span><span class="det"><span class="meta">10 km / 25 分鐘</span>停泊天神コア或大丸地下停車場 ¥400/30min</span></li>
+<li><span class="t">16:30</span><span class="h">🛍 天神 逛街</span><span class="det">PARCO · Solaria · Tenjin Underground · 大丸 · ジュンク堂書店 · 預算 2 小時 · 幼童需注意人潮</span></li>
+<li class="drive"><span class="t">18:30</span><span class="h">駕車 → 大名 (稚加榮)</span><span class="det"><span class="meta">1 km / 5 分鐘</span>大名/今泉地區 · 餐廳專用泊車或 Times</span></li>
+<li class="eat"><span class="t">19:00</span><span class="h">🍣 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=稚加榮+本店" target="_blank">稚加榮 本店</a> (晚餐 · 魚生 2/2)</span><span class="det"><span class="tag eat">活造</span><span class="tag book">已預約個室</span>地址 福岡市中央区大名 1-4-62 · Tel 092-721-4624 · 必點：活造盛合、明太子、もつ鍋 · 預算 ¥8,000/人 · <b>7 人需預約個室，60 日前可訂</b></span></li>
+<li class="drive"><span class="t">21:30</span><span class="h">回千代</span><span class="det"><span class="meta">5 km / 15 分鐘</span></span></li>
+</ul>
+
+<div class="section-num">SECTION 04.2</div>
+<div class="infocard">
+<h4>能古島 渡輪費用 (Serena 4.7m)</h4>
+<table>
+<tr><td>汽車來回</td><td><b>¥5,040</b> (含司機 1 人)</td></tr>
+<tr><td>大人 ×6 來回</td><td>¥230 ×2 ×6 = ¥2,760 (扣司機 1 名約 ¥2,300)</td></tr>
+<tr><td>幼童 來回</td><td>¥240</td></tr>
+<tr><td>總計</td><td>約 <b>¥7,580</b></td></tr>
+<tr><td>注意</td><td>航班 ~每小時 1 班 · 提前 30 分鐘到場</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ============ DAY 5 ============ -->
+<section class="day" data-d="5">
+<div class="day-head">
+  <div><div class="num">DAY 05 · CITY</div><h2>福岡市動物園 · 博多<span class="acc">採買</span></h2><div class="date">2026-04-21 (TUE)</div></div>
+  <div class="wx"><b>20°C</b>晴<br>降雨 10%</div>
+</div>
+
+<div class="callout info">
+<span class="lab">💡 STRATEGY · 慢日</span>
+經 Day 3–4 連續高強度後的恢復日。動物園早上 → 午後博多採買 → 晚餐燒肉。預留充裕緩衝時間，幼童狀態優先。
+</div>
+
+<div class="section-num">SECTION 05.1 · MEALS</div>
+<h3>🍽 用餐建議</h3>
+<div class="meals">
+<div class="meal-card"><span class="meal-icon">🌅</span><div class="meal-slot">早餐</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=Mister+Donut+博多駅" target="_blank">Mister Donut 博多駅</a><em>09:00 · 悠閒</em></div>
+<div class="meal-card"><span class="meal-icon">🍱</span><div class="meal-slot">午餐 · 園內</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=福岡市動物園+ZooCafe" target="_blank">動物園 ZooCafe</a><em>13:00 · ¥1,500/人</em></div>
+<div class="meal-card"><span class="meal-icon">🍰</span><div class="meal-slot">下午茶 · 手信</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=福砂屋+博多阪急" target="_blank">福砂屋 博多阪急 B2</a><em>16:00 · カステラ + coffee</em></div>
+<div class="meal-card"><span class="meal-icon">🥩</span><div class="meal-slot">晚餐 · 燒肉 2/2</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=大東園+上川端町" target="_blank">大東園 上川端町</a><em>19:00 · 已預約 · 近櫛田</em></div>
+</div>
+
+<div class="section-num">SECTION 05.2 · TIMELINE</div>
+<ul class="tl">
+<li><span class="t">09:00</span><span class="h">悠閒早餐</span><span class="det">酒店或 BRANCH 內咖啡店</span></li>
+<li class="drive"><span class="t">09:30</span><span class="h">出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=福岡市動物園" target="_blank">福岡市動物園</a></span><span class="det"><span class="meta">6 km / 18 分鐘</span>地址 中央区南公園 1-1 · 停車 ¥520/日 (208 位)</span></li>
+<li><span class="t">10:00</span><span class="h">🐼 福岡市動物園 + 植物園</span><span class="det">大人 ¥600 / 中學生以下免費 · 9:00–17:00 (週一休) · 必看：紅熊貓、長頸鹿、企鵝、爬蟲館 · 預算 3 小時 · <b>此為福岡市內最受幼童歡迎景點</b></span></li>
+<li class="eat"><span class="t">13:00</span><span class="h">園內午餐 / 附近輕食</span><span class="det">園內咖啡 ZooCafe 或下山去藥院附近 · 預算 ¥1,500/人</span></li>
+<li class="drive"><span class="t">14:30</span><span class="h">→ <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=JR博多シティ" target="_blank">博多站</a></span><span class="det"><span class="meta">5 km / 15 分鐘</span>JR 博多 City 地下停車 ¥600/小時</span></li>
+<li><span class="t">14:45</span><span class="h">🛍 博多站 阪急 / 東急ハンズ / KITTE</span><span class="det">最後採買 · 紀念品 · 食品手信 · 明太子 (ふくや) · ひよ子 · <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=福砂屋+博多阪急" target="_blank">福砂屋 カステラ</a> (B2) · 預算 3 小時</span></li>
+<li><span class="t">17:45</span><span class="h">回酒店放手信</span><span class="det">短暫休息 · 幼童換衣</span></li>
+<li class="drive"><span class="t">18:30</span><span class="h">出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=大東園+上川端町" target="_blank">大東園 上川端町</a></span><span class="det"><span class="meta">3 km / 10 分鐘</span>近櫛田神社 (非博多駅東分店)</span></li>
+<li class="eat"><span class="t">19:00</span><span class="h">🥩 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=大東園+上川端町" target="_blank">大東園 本店</a> (晚餐 · 燒肉 2/2)</span><span class="det"><span class="tag eat">老字號燒肉</span><span class="tag book">已預約</span>地址 <b>博多区上川端町 1-1-1</b> · Tel 092-282-0055 · 推薦：特選ロース、上カルビ、冷麵 · 預算 ¥10,000/人</span></li>
+<li class="drive"><span class="t">21:30</span><span class="h">回千代</span><span class="det">收拾行李 · 幼童早睡</span></li>
+</ul>
+
+<div class="callout warn">
+<span class="lab">⚠️ DAY 5 注意</span>
+福岡市動物園 <b>逢週一休館</b> · 4/21 為週二，營業正常 ✓ · 但若行程被迫調動需注意此死線。
+</div>
+</section>
+
+<!-- ============ DAY 6 ============ -->
+<section class="day" data-d="6">
+<div class="day-head">
+  <div><div class="num">DAY 06 · DEPARTURE</div><h2>櫛田神社 · <span class="acc">回港</span></h2><div class="date">2026-04-22 (WED)</div></div>
+  <div class="wx"><b>18°C</b>晴<br>降雨 15%</div>
+</div>
+
+<div class="callout dan">
+<span class="lab">⚠️ DAY 6 行李分流 — 同 Day 1 反向</span>
+還車時 Serena 仍無法載 7 人 + 5 件行李。<br>
+<b>方案：</b>
+<ol style="margin:6px 0 0 18px;font-size:13px">
+<li>11:30 在酒店預約 MK Jumbo Taxi (前一晚已預約)</li>
+<li><b>2 大人 + 全部行李</b> → Jumbo Taxi → 機場 (12:00 出發)</li>
+<li><b>Scott + 4 大人 + 幼童</b> → Serena → 還車點 → 機場 shuttle</li>
+<li>於機場 14:00 集合 check-in</li>
+</ol>
+</div>
+
+<div class="section-num">SECTION 06.1 · MEALS</div>
+<h3>🍽 用餐建議</h3>
+<div class="meals">
+<div class="meal-card"><span class="meal-icon">🌅</span><div class="meal-slot">早餐 · 傳統</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=川端ぜんざい広場" target="_blank">川端ぜんざい廣場</a><em>10:30 · 博多紅豆湯元祖</em></div>
+<div class="meal-card"><span class="meal-icon">🍱</span><div class="meal-slot">午餐 · 機場</div><a class="meal-name" href="https://www.google.com/maps/search/?api=1&query=一蘭+福岡空港" target="_blank">一蘭 / 一双 福岡空港</a><em>12:30 · 3F 食品街</em></div>
+<div class="meal-card skip"><span class="meal-icon">🍰</span><div class="meal-slot">下午茶</div><span class="meal-name">機場候機室</span><em>免稅店 + 最後手信</em></div>
+<div class="meal-card skip"><span class="meal-icon">🍽</span><div class="meal-slot">晚餐</div><span class="meal-name">UO669 機上</span><em>19:00 抵港</em></div>
+</div>
+
+<div class="callout info">
+<span class="lab">⛩ 櫛田神社 參拜禮儀 (幼童也要學)</span>
+博多總鎮守 · 全家示範「二拝二拍手一拝」：
+<ol class="shrine-steps">
+<li><b>鳥居前</b> — 入口輕微鞠躬 (約 15 度)，表示向神明致意</li>
+<li><b>手水舍</b> — 左手 → 右手 → 左手捧水漱口 (不吞) → 再洗左手 → 直立水杓沖柄</li>
+<li><b>賽錢</b> — 輕放 ¥5 硬幣 (縁起 = 有緣) 入賽錢箱，不可丟擲</li>
+<li><b>鈴</b> — 輕搖鈴繩 2–3 下</li>
+<li><b>參拝</b> — <b>二拜</b> (深鞠躬 90° × 2) → <b>二拍手</b> (雙手合十後右手略退半指再拍 2 次) → 心中默祈 → <b>一拜</b> (再深鞠躬 1 次)</li>
+<li><b>離開</b> — 轉身後再向神殿輕鞠躬一次</li>
+</ol>
+<b>⚠️ 禁忌：</b>神域內不喧嘩、不飲食、不隨意攝影 (看場內標示)、不穿鞋進入內殿、生理期女性傳統上避免參拜 (現代已寬鬆)
+</div>
+
+<div class="section-num">SECTION 06.2 · TIMELINE</div>
+<ul class="tl">
+<li><span class="t">08:30</span><span class="h">早餐 · 收拾行李</span><span class="det">最後檢查護照、租車合約、預訂單</span></li>
+<li><span class="t">10:00</span><span class="h">Check-out 千代</span><span class="det">行李存於酒店大堂 · 辦理退房</span></li>
+<li><span class="t">10:15</span><span class="h">⛩ 步行 / 駕車 <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=櫛田神社+博多" target="_blank">櫛田神社</a></span><span class="det"><span class="meta">2 km / 駕 8 分鐘 或 步行 25 分鐘</span>地址 博多区上川端町 1-41 · 4:00–22:00 · 免費 · 博多總鎮守 · 山笠展示 · 參拝禮儀見上方</span></li>
+<li><span class="t">11:00</span><span class="h"><a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=川端商店街" target="_blank">川端商店街</a></span><span class="det">最後手信 · 川端ぜんざい廣場 · 預算 45 分鐘</span></li>
+<li class="drive"><span class="t">11:45</span><span class="h">回酒店</span><span class="det">取行李 · 預備分流</span></li>
+<li class="warn"><span class="t">12:00</span><span class="h">🚖 兩車分別出發 → <a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=福岡空港" target="_blank">福岡空港</a></span><span class="det"><span class="tag warn">分流</span>Jumbo Taxi 載大件行李 · Serena 載人</span></li>
+<li class="eat"><span class="t">12:30</span><span class="h">機場午餐 (<a class="loc-link" href="https://www.google.com/maps/search/?api=1&query=一蘭+福岡空港" target="_blank">一蘭</a> / 一双)</span><span class="det">福岡機場國際線 3F · 免行李壓力快速食</span></li>
+<li><span class="t">13:30</span><span class="h">Scott 還車</span><span class="det">租車公司辦事處 · 還車前 30 分鐘加滿油 (機場周邊 ENEOS) · 檢查車況</span></li>
+<li><span class="t">14:00</span><span class="h">全員集合 國際線 Check-in</span><span class="det">UO669 櫃位 · 預留 2 小時辦手續</span></li>
+<li><span class="t">15:30</span><span class="h">過關 · 候機</span><span class="det">免稅店最後採買</span></li>
+<li><span class="t">16:15</span><span class="h">✈️ UO669 起飛</span><span class="det">福岡 → 香港 約 3h25</span></li>
+<li><span class="t">19:00</span><span class="h">抵達 HKIA</span><span class="det">行程結束 ✓</span></li>
+</ul>
+</section>
+
+<!-- ============ CRITICAL DEADLINES ============ -->
+<section class="day" data-d="critical">
+<div class="day-head"><div><div class="num">SECTION 99 · DEADLINES</div><h2>死線 <span class="acc">總清單</span></h2><div class="date">CRITICAL ACTIONS</div></div></div>
+
+<div class="section-num">SECTION 99.1 · 出發前</div>
+<table class="summary-tbl">
+<thead><tr><th>日期</th><th>動作</th><th>責任</th></tr></thead>
+<tbody>
+<tr><td><b>3/20 前</b></td><td>稚加榮 本店 預約 7 人個室 · Tel 092-721-4624</td><td>團長</td></tr>
+<tr><td><b>3/22 前</b></td><td>大東園 本店 預約 7 人 (週末熱門)</td><td>團長</td></tr>
+<tr><td><b>4/4 前</b></td><td>肉いち 藥院店 預約 (Tabelog)</td><td>團長</td></tr>
+<tr><td><b>4/10 前</b></td><td>博多豐一 預約 + 確認 7 人 + 幼童</td><td>團長</td></tr>
+<tr><td><b>4/10 前</b></td><td>Scott 確認租車公司加幼童安全座椅 (3.5 歲 → Junior 型)</td><td>Scott</td></tr>
+<tr><td><b>4/15 前</b></td><td>準備 fleece + 防風外套 (大分山區 + 吊橋)</td><td>家長</td></tr>
+<tr><td><b>4/15 前</b></td><td>檢查護照、機票、租車合約、酒店訂單</td><td>全員</td></tr>
+<tr><td><b>4/16 17:00</b></td><td>MK Skygate Jumbo Taxi 預約 (mktaxi-japan.com) — Day 1 接機</td><td>團長</td></tr>
+<tr><td><b>4/21 晚</b></td><td>MK Jumbo Taxi 預約 — Day 6 送機</td><td>團長</td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 99.2 · 行程中</div>
+<table class="summary-tbl">
+<thead><tr><th>時間</th><th>死線</th><th>後果</th></tr></thead>
+<tbody>
+<tr><td>4/17 14:30</td><td>Scott 完成取車 + 安裝 baby seat</td><td>15:30 接不到航班</td></tr>
+<tr><td>4/19 07:30</td><td>千代鋼鐵出發 (Day 3)</td><td>Safari Jungle Bus 售罄 → 全日崩盤</td></tr>
+<tr><td>4/19 09:30</td><td>到達 Safari 售票口</td><td>排隊太後買不到票</td></tr>
+<tr><td>4/19 16:30</td><td>離開九重夢前往鳥栖</td><td>晚餐延遲 + 幼童體力崩潰</td></tr>
+<tr><td>4/20 11:50</td><td>姪浜港報到 (汽車登船)</td><td>錯過 12:20 班次</td></tr>
+<tr><td>4/22 13:30</td><td>Scott 還車完成</td><td>誤航班</td></tr>
+<tr><td>4/22 14:00</td><td>全員機場集合</td><td>UO669 check-in 時限</td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 99.3 · 必帶物品 (幼童 3.5 歲)</div>
+<div class="grid2">
+<div class="infocard">
+<h4>衣物</h4>
+<table>
+<tr><td>福岡日</td><td>長袖 T + 薄外套</td></tr>
+<tr><td>大分日</td><td>fleece + 防風外套 + 帽 + 手套</td></tr>
+<tr><td>備用</td><td>2 套換洗 + 雨衣</td></tr>
+<tr><td>鞋</td><td>運動鞋 + 涼鞋</td></tr>
+</table>
+</div>
+<div class="infocard">
+<h4>裝備</h4>
+<table>
+<tr><td>推車</td><td>輕便型可上飛機</td></tr>
+<tr><td>背帶</td><td>糸島沙地 + 能古島山路</td></tr>
+<tr><td>食物</td><td>飯糰 + 餅乾 + 水樽 + 牛奶粉</td></tr>
+<tr><td>藥物</td><td>退燒、止瀉、creams、藥膏</td></tr>
+<tr><td>娛樂</td><td>iPad + 耳機 (車上 2h+)</td></tr>
+</table>
+</div>
+</div>
+
+<div class="callout ok">
+<span class="lab">✅ FINAL CHECKLIST</span>
+本行程已通過：① 行李物流可行性測試 ② 餐廳預約死線 ③ Safari 售票風險評估 ④ 渡輪汽車載運核實 ⑤ 法定兒童座椅 ⑥ 山區氣溫差 ⑦ 駕駛時間 ⑧ 高速公路通行料估算 ⑨ 幼童作息保護。可直接執行。
+</div>
+</section>
+
+<!-- ============ WEATHER ============ -->
+<section class="day" data-d="weather">
+<div class="day-head"><div><div class="num">SECTION 00.7 · WEATHER</div><h2>天氣 + <span class="acc">穿搭建議</span></h2><div class="date">CLIMATE NORMALS · APR MID-MONTH</div></div></div>
+
+<div class="callout warn">
+<span class="lab">⚠️ 資料說明</span>
+2026/04 實際天氣需出發前 7–10 天 (約 4/10 起) 才能查到具體預報。<b>下表為 4 月中旬福岡氣候統計值 (Climate Normals · 1991–2020)</b>，可作為打包行李依據。出發前請以 <b>tenki.jp</b> / <b>jma.go.jp</b> 實際預報為準。
+</div>
+
+<div class="section-num">SECTION 00.7.1 · 每日天氣預估</div>
+<table class="summary-tbl">
+<thead><tr><th>日期</th><th>地區</th><th>高 / 低</th><th>體感</th><th>天氣</th><th>降雨</th><th>關鍵注意</th></tr></thead>
+<tbody>
+<tr><td><b>4/17 五</b><br>Day 1</td><td>福岡市</td><td><b>19°C</b> / 11°C</td><td>涼爽舒適</td><td>晴 → 多雲</td><td>15%</td><td>抵達晚上轉涼，外套必備</td></tr>
+<tr><td><b>4/18 六</b><br>Day 2</td><td>海之中道 · 志賀島</td><td><b>20°C</b> / 12°C</td><td>海邊風大體感 17°C</td><td>多雲</td><td>20%</td><td>沿海風大，幼童帽 + 防風外套</td></tr>
+<tr><td><b>4/19 日</b><br>Day 3 上</td><td>大分 Safari (低海拔)</td><td><b>18°C</b> / 9°C</td><td>晨涼日暖</td><td>晴</td><td>10%</td><td>早上 07:30 出發時 ~9°C，車內預備暖毯</td></tr>
+<tr><td>　</td><td>九重夢吊橋 (777m)</td><td><b>13°C</b> / 4°C</td><td>體感 8°C (風冷)</td><td>晴 + 強風</td><td>15%</td><td><b>⚠️ 必備 fleece + 防風外套 + 帽 + 手套</b><br>橋上風速常 5 m/s+</td></tr>
+<tr><td>　</td><td>鳥栖 (傍晚)</td><td><b>17°C</b> / 11°C</td><td>舒適</td><td>晴</td><td>10%</td><td>戶外 Outlet 18:00 後轉涼</td></tr>
+<tr><td><b>4/20 一</b><br>Day 4</td><td>糸島 + 能古島</td><td><b>21°C</b> / 13°C</td><td>溫暖</td><td>晴</td><td>10%</td><td>沿海日曬強，防曬 + 帽</td></tr>
+<tr><td><b>4/21 二</b><br>Day 5</td><td>福岡市</td><td><b>20°C</b> / 12°C</td><td>溫暖</td><td>晴 → 多雲</td><td>15%</td><td>動物園戶外，防曬</td></tr>
+<tr><td><b>4/22 三</b><br>Day 6</td><td>福岡市</td><td><b>19°C</b> / 11°C</td><td>舒適</td><td>多雲</td><td>20%</td><td>—</td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.7.2 · 4 月中旬福岡氣候統計</div>
+<div class="grid2">
+<div class="infocard">
+<h4>福岡市 統計值</h4>
+<table>
+<tr><td>平均高溫</td><td>18.6°C</td></tr>
+<tr><td>平均低溫</td><td>10.9°C</td></tr>
+<tr><td>歷史極端高</td><td>26.5°C (2018)</td></tr>
+<tr><td>歷史極端低</td><td>3.2°C (2010)</td></tr>
+<tr><td>降雨日數</td><td>9–10 天/月</td></tr>
+<tr><td>日均日照</td><td>6.5 小時</td></tr>
+<tr><td>櫻花</td><td>4 月初已謝，僅葉櫻</td></tr>
+</table>
+</div>
+<div class="infocard">
+<h4>大分 九重 (海拔 777m)</h4>
+<table>
+<tr><td>比福岡低</td><td><b>~6°C</b></td></tr>
+<tr><td>平均高溫</td><td>13°C</td></tr>
+<tr><td>平均低溫</td><td>4°C</td></tr>
+<tr><td>橋上風速</td><td>5–10 m/s</td></tr>
+<tr><td>體感溫度</td><td>實際低 4–5°C</td></tr>
+<tr><td>霧</td><td>清晨 / 黃昏常見</td></tr>
+<tr><td>降雪</td><td>4 月已罕見</td></tr>
+</table>
+</div>
+</div>
+
+<div class="section-num">SECTION 00.7.3 · 穿搭分層建議</div>
+<table class="summary-tbl">
+<thead><tr><th>角色</th><th>內層</th><th>中層</th><th>外層</th><th>配件</th></tr></thead>
+<tbody>
+<tr><td><b>大人 福岡日</b></td><td>長袖 T 或薄毛衣</td><td>—</td><td>輕薄外套 / 風衣</td><td>—</td></tr>
+<tr><td><b>大人 大分日 (Day 3)</b></td><td>保暖內衣 / 長袖 T</td><td>毛衣 / fleece</td><td>防風外套</td><td>圍巾、帽</td></tr>
+<tr><td><b>幼童 福岡日</b></td><td>長袖 T</td><td>薄背心</td><td>輕外套</td><td>太陽帽 + 替換衣 1 套</td></tr>
+<tr><td><b>幼童 大分日 (Day 3)</b></td><td>發熱衣 + 長袖</td><td>fleece 連身</td><td>防風防潑外套</td><td><b>毛帽 + 手套 + 圍巾 + 厚襪</b></td></tr>
+<tr><td><b>幼童 糸島日 (Day 4)</b></td><td>長袖 T (防曬)</td><td>—</td><td>薄外套</td><td>太陽帽 + 防曬</td></tr>
+</tbody></table>
+
+<div class="section-num">SECTION 00.7.4 · 行李清單 (含天氣相關)</div>
+<div class="grid2">
+<div class="infocard">
+<h4>必帶 (大人通用)</h4>
+<table>
+<tr><td>外套</td><td>輕風衣 ×1</td></tr>
+<tr><td>防風</td><td>fleece ×1 (Day 3 用)</td></tr>
+<tr><td>長袖</td><td>3–4 件</td></tr>
+<tr><td>長褲</td><td>3 條</td></tr>
+<tr><td>鞋</td><td>運動鞋 ×1 (主要)</td></tr>
+<tr><td>傘</td><td>摺傘 ×2 (家庭共用)</td></tr>
+<tr><td>暖包</td><td>4 個 (Day 3 應急)</td></tr>
+</table>
+</div>
+<div class="infocard">
+<h4>必帶 (幼童 3.5 歲)</h4>
+<table>
+<tr><td>fleece</td><td>1 件 (Day 3)</td></tr>
+<tr><td>防風外套</td><td>1 件</td></tr>
+<tr><td>毛帽 + 手套</td><td>各 1 套</td></tr>
+<tr><td>長袖 T</td><td>5 件</td></tr>
+<tr><td>長褲</td><td>4 條</td></tr>
+<tr><td>太陽帽</td><td>1 頂</td></tr>
+<tr><td>替換襪 / 內衣褲</td><td>各 6 套</td></tr>
+<tr><td>雨衣</td><td>1 件 (連帽)</td></tr>
+</table>
+</div>
+</div>
+
+<div class="callout dan">
+<span class="lab">⚠️ 4/19 Day 3 高風險</span>
+<b>九重夢大吊橋上溫差最大</b>：從福岡 19°C 直降至體感 8°C，差距 11°C。幼童體溫調節弱，吊橋上風速常達 8 m/s 以上。<b>務必</b>在前往吊橋的車程中 (15:00 前) 已完成全套穿戴，包括手套、毛帽、防風外套。下車前再檢查一次。
+</div>
+
+<div class="section-num">SECTION 00.7.5 · 天氣監測</div>
+<table class="summary-tbl">
+<thead><tr><th>來源</th><th>用途</th><th>連結</th></tr></thead>
+<tbody>
+<tr><td>tenki.jp</td><td>10 日預報 + 即時雨雲</td><td><a href="https://tenki.jp/forecast/9/43/8210/40130/" target="_blank">福岡市 ↗</a> · <a href="https://tenki.jp/forecast/7/43/8330/44201/" target="_blank">別府 ↗</a> · <a href="https://tenki.jp/forecast/7/43/8430/44461/" target="_blank">九重 ↗</a></td></tr>
+<tr><td>JMA 氣象廳</td><td>官方預報 + 警報</td><td><a href="https://www.jma.go.jp/bosai/forecast/#area_type=class20s&area_code=4013010" target="_blank">福岡 ↗</a></td></tr>
+<tr><td>Yahoo 天氣 (日)</td><td>降雨機率分時</td><td><a href="https://weather.yahoo.co.jp/weather/jp/40/8210.html" target="_blank">福岡 ↗</a></td></tr>
+<tr><td>Windy.com</td><td>九重吊橋風速 (重要)</td><td><a href="https://www.windy.com/33.196/131.226?33.196,131.226,12" target="_blank">九重吊橋風速 ↗</a></td></tr>
+</tbody></table>
+
+<div class="callout info">
+<span class="lab">📅 監測時程</span>
+<b>4/10 起</b>：每日查 tenki.jp 福岡 10 日預報 · <b>4/15 起</b>：確認 4/19 大分山區風速 (Windy.com) · <b>4/17 早上</b>：出發前最後檢查 · <b>4/19 06:30</b>：起床第一件事查九重吊橋當日風速，若 >12 m/s 考慮當日縮短停留時間。
+</div>
+</section>
+
+<!-- ============ INFOGRAPHIC (NotebookLM) ============ -->
+<section class="day" data-d="infographic">
+<div class="day-head"><div><div class="num">SECTION 00.8 · INFOGRAPHIC</div><h2>單頁 <span class="acc">行程圖</span></h2><div class="date">NOTEBOOKLM AUTO-GENERATED</div></div></div>
+
+<div class="callout warn">
+<span class="lab">⚠️ PENDING · 待生成</span>
+NotebookLM session 已過期，需用戶在 terminal 執行：<br>
+<code style="background:var(--bg-code);padding:4px 8px;border-radius:3px;display:inline-block;margin:6px 0">! notebooklm login</code><br>
+完成登入後，我會自動執行以下指令生成單頁 bento-grid 風格行程圖並嵌入此處：<br>
+<code style="background:var(--bg-code);padding:8px 10px;border-radius:3px;display:block;margin:6px 0;font-size:10px;white-space:pre-wrap">notebooklm create "Fukuoka 6D5N Infographic"
+notebooklm source add ./notebooklm-source.md --wait
+notebooklm generate infographic --orientation portrait \
+  --detail detailed --style bento-grid --language zh-Hant \
+  --wait --retry 3 \
+  "福岡 6 日 5 夜自駕親子行程 · 每日核心 · 4 餐美食 · 動線 · 天氣"
+notebooklm download infographic fukuoka-infographic.png --force</code>
+備用樣式 (若 bento-grid 效果不佳): editorial → professional → sketch-note
+</div>
+
+<div class="info-wrap">
+<div class="placeholder-img">
+📄 INFOGRAPHIC PLACEHOLDER<br>
+<br>
+將於 NotebookLM 認證後生成單頁行程圖 (portrait · bento-grid · 中文)<br>
+並嵌入此處為 &lt;img src="fukuoka-infographic.png"&gt;<br>
+<br>
+Source markdown 已寫於: output/fukuoka-itinerary-2026-04-17/notebooklm-source.md
+</div>
+</div>
+
+<div class="section-num">SECTION 00.8.1 · 關於 NotebookLM 單頁圖</div>
+<p style="font-size:13px;color:var(--text-secondary);margin:10px 0">NotebookLM 於 2024–2025 加入 <b>Infographic / Mind Map / Video Overview</b> 等視覺輸出功能。本專案用 <code>notebooklm-py</code> Python CLI 直接調用 Google NotebookLM API：① 建立 notebook ② 上傳 markdown 源文件 ③ 觸發 infographic 生成 ④ 下載 PNG。全程無需手動開啟瀏覽器。</p>
+
+<div class="callout info">
+<span class="lab">💡 User reference</span>
+靈感來自 <a href="https://www.threads.com/@eason.shh/post/DWV51UvFA5X/" target="_blank">@eason.shh Threads 貼文</a>：介紹 ChatGPT → Notion → NotebookLM 單頁圖工作流。本專案直接在 CLI 自動化此流程。
+</div>
+</section>
+
+<footer>
+FUKUOKA · 6D5N · v3 FINAL · GENERATED 2026-04-07 · OPTION 1 STANDARD COPY VERSION<br>
+ALL ITEMS RESEARCHED · CRITICAL UNKNOWNS MARKED 待核實
+</footer>
+</main>
+</div>
+
+<script>
+const btns=document.querySelectorAll('.nav-btn');
+const days=document.querySelectorAll('.day');
+btns.forEach(b=>b.addEventListener('click',()=>{
+  btns.forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  const d=b.dataset.d;
+  days.forEach(s=>s.classList.toggle('show', d==='all'||s.dataset.d===d));
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+</script>
+</body>
+</html>
