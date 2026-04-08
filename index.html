@@ -115,6 +115,24 @@ table.summary-tbl b{color:var(--text-primary)}
 .meal-card em{color:var(--text-muted);font-size:10px;font-style:normal;display:block;margin-top:4px}
 .meal-card.skip{opacity:.5}
 .meal-card.skip .meal-name{color:var(--text-muted);pointer-events:none}
+.attractions{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:16px 0 22px}
+.attr-card{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--bg-raised);min-height:140px;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:#fff;text-decoration:none;transition:transform .2s,box-shadow .2s;isolation:isolate}
+.attr-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--g1,#0ea5e9),var(--g2,#1e40af));z-index:-2}
+.attr-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.55) 100%);z-index:-1}
+.attr-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.attr-card .attr-emoji{position:absolute;top:10px;right:12px;font-size:42px;opacity:.85;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.attr-card .attr-tag{position:absolute;top:12px;left:12px;font-family:var(--font-c);font-size:9px;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.22);padding:3px 8px;border-radius:99px;backdrop-filter:blur(4px)}
+.attr-card .attr-name{font-size:15px;font-weight:700;line-height:1.25;margin:0;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.attr-card .attr-sub{font-size:11px;opacity:.92;margin-top:4px;font-family:var(--font-c);text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.attr-card.g-sea{--g1:#0891b2;--g2:#0c4a6e}
+.attr-card.g-sky{--g1:#38bdf8;--g2:#1e3a8a}
+.attr-card.g-forest{--g1:#10b981;--g2:#064e3b}
+.attr-card.g-sakura{--g1:#f9a8d4;--g2:#9d174d}
+.attr-card.g-sunset{--g1:#fb923c;--g2:#9a3412}
+.attr-card.g-onsen{--g1:#fbbf24;--g2:#78350f}
+.attr-card.g-night{--g1:#6366f1;--g2:#1e1b4b}
+.attr-card.g-stone{--g1:#94a3b8;--g2:#1e293b}
+.attr-card.g-wood{--g1:#d97706;--g2:#451a03}
 .tl .h a,a.loc-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent-primary);transition:color .15s}
 .tl .h a:hover,a.loc-link:hover{color:var(--accent-primary)}
 .info-wrap{text-align:center;margin:20px 0}
@@ -508,6 +526,21 @@ Day 3 (藍色) 是最長最遠的單日線 — 共 360+ km。Day 4 (黃色) 是�
   <div class="wx"><b>17°C</b>晴 / 體感涼<br>降雨 15%</div>
 </div>
 
+<div class="attractions">
+  <a class="attr-card g-sky" href="https://www.google.com/maps/search/?api=1&query=福岡空港" target="_blank">
+    <span class="attr-tag">ARRIVAL</span><span class="attr-emoji">✈️</span>
+    <div class="attr-name">福岡機場</div><div class="attr-sub">FUK · 14:30 抵達</div>
+  </a>
+  <a class="attr-card g-sunset" href="https://www.google.com/maps/search/?api=1&query=西松屋+福岡" target="_blank">
+    <span class="attr-tag">SHOPPING</span><span class="attr-emoji">🛒</span>
+    <div class="attr-name">BRANCH 補給</div><div class="attr-sub">西松屋 · 業務スーパー</div>
+  </a>
+  <a class="attr-card g-sea" href="https://www.google.com/maps/search/?api=1&query=博多港塔" target="_blank">
+    <span class="attr-tag">LANDMARK</span><span class="attr-emoji">🗼</span>
+    <div class="attr-name">博多港塔</div><div class="attr-sub">Bayside · 黃昏景</div>
+  </a>
+</div>
+
 <div class="callout dan">
 <span class="lab">⚠️ DAY 1 行李硬傷 — 已解決</span>
 <b>問題：</b>Serena 8 人座 7 人滿載時，後尾箱僅剩約 15 cm 深，<b>無法容納 4 × 28″ + 1 × 22″ 行李</b>。<br>
@@ -595,6 +628,25 @@ Day 3 (藍色) 是最長最遠的單日線 — 共 360+ km。Day 4 (黃色) 是�
   <div class="wx"><b>19°C</b>多雲<br>降雨 20%</div>
 </div>
 
+<div class="attractions">
+  <a class="attr-card g-sakura" href="https://www.google.com/maps/search/?api=1&query=海の中道海浜公園" target="_blank">
+    <span class="attr-tag">PARK</span><span class="attr-emoji">🌷</span>
+    <div class="attr-name">海之中道海濱公園</div><div class="attr-sub">鬱金香 · 摩天輪</div>
+  </a>
+  <a class="attr-card g-forest" href="https://www.google.com/maps/search/?api=1&query=動物の森+海の中道" target="_blank">
+    <span class="attr-tag">ANIMAL</span><span class="attr-emoji">🦁</span>
+    <div class="attr-name">動物之森</div><div class="attr-sub">水豚 · 袋鼠 · 羊駝</div>
+  </a>
+  <a class="attr-card g-sea" href="https://www.google.com/maps/search/?api=1&query=志賀島" target="_blank">
+    <span class="attr-tag">ISLAND</span><span class="attr-emoji">🏝️</span>
+    <div class="attr-name">志賀島</div><div class="attr-sub">海岸線 · 中西食堂</div>
+  </a>
+  <a class="attr-card g-night" href="https://www.google.com/maps/search/?api=1&query=薬院" target="_blank">
+    <span class="attr-tag">DINING</span><span class="attr-emoji">🥩</span>
+    <div class="attr-name">藥院夜食</div><div class="attr-sub">和牛燒肉一</div>
+  </a>
+</div>
+
 <div class="callout info">
 <span class="lab">💡 STRATEGY</span>
 週六上午本應人潮洶湧，但海之中道是大型公園 (~540 公頃)，分散度極高，週六只要在 <b>10:00 開園即抵達</b> 即可避開人潮峰值。志賀島在園區東側 6 km，自駕無壓力。
@@ -637,6 +689,25 @@ Day 3 (藍色) 是最長最遠的單日線 — 共 360+ km。Day 4 (黃色) 是�
 <div class="day-head">
   <div><div class="num">DAY 03 · OITA EPIC</div><h2>Safari · 九重夢 · <span class="acc">鳥栖 Outlet</span></h2><div class="date">2026-04-19 (SUN)</div></div>
   <div class="wx"><b>15°C</b>山區寒涼<br>大分山區風大</div>
+</div>
+
+<div class="attractions">
+  <a class="attr-card g-forest" href="https://www.google.com/maps/search/?api=1&query=九州自然動物公園+アフリカンサファリ" target="_blank">
+    <span class="attr-tag">SAFARI</span><span class="attr-emoji">🦒</span>
+    <div class="attr-name">非洲 Safari</div><div class="attr-sub">叢林巴士 · 餵食體驗</div>
+  </a>
+  <a class="attr-card g-onsen" href="https://www.google.com/maps/search/?api=1&query=別府" target="_blank">
+    <span class="attr-tag">ONSEN</span><span class="attr-emoji">♨️</span>
+    <div class="attr-name">別府溫泉鄉</div><div class="attr-sub">地獄巡禮 · 雞天午餐</div>
+  </a>
+  <a class="attr-card g-sky" href="https://www.google.com/maps/search/?api=1&query=九重夢大吊橋" target="_blank">
+    <span class="attr-tag">BRIDGE</span><span class="attr-emoji">🌉</span>
+    <div class="attr-name">九重夢大吊橋</div><div class="attr-sub">390m · 高 173m</div>
+  </a>
+  <a class="attr-card g-sunset" href="https://www.google.com/maps/search/?api=1&query=鳥栖プレミアムアウトレット" target="_blank">
+    <span class="attr-tag">SHOPPING</span><span class="attr-emoji">🛍️</span>
+    <div class="attr-name">鳥栖 Premium Outlets</div><div class="attr-sub">5,000 位停車</div>
+  </a>
 </div>
 
 <div class="callout dan">
@@ -712,6 +783,25 @@ Day 3 (藍色) 是最長最遠的單日線 — 共 360+ km。Day 4 (黃色) 是�
   <div class="wx"><b>21°C</b>晴<br>降雨 10%</div>
 </div>
 
+<div class="attractions">
+  <a class="attr-card g-sea" href="https://www.google.com/maps/search/?api=1&query=糸島+櫻井二見ヶ浦" target="_blank">
+    <span class="attr-tag">COAST</span><span class="attr-emoji">⛩️</span>
+    <div class="attr-name">糸島 櫻井二見浦</div><div class="attr-sub">夫婦岩 · 白色鳥居</div>
+  </a>
+  <a class="attr-card g-sakura" href="https://www.google.com/maps/search/?api=1&query=のこのしまアイランドパーク" target="_blank">
+    <span class="attr-tag">FLOWER</span><span class="attr-emoji">🌸</span>
+    <div class="attr-name">能古島海島公園</div><div class="attr-sub">油菜花 · 鬱金香</div>
+  </a>
+  <a class="attr-card g-night" href="https://www.google.com/maps/search/?api=1&query=天神+福岡" target="_blank">
+    <span class="attr-tag">CITY</span><span class="attr-emoji">🌃</span>
+    <div class="attr-name">天神商圈</div><div class="attr-sub">PARCO · Solaria · 大丸</div>
+  </a>
+  <a class="attr-card g-sunset" href="https://www.google.com/maps/search/?api=1&query=稚加榮+本店" target="_blank">
+    <span class="attr-tag">DINING</span><span class="attr-emoji">🐟</span>
+    <div class="attr-name">稚加榮 本店</div><div class="attr-sub">活造盛合 · 個室</div>
+  </a>
+</div>
+
 <div class="callout info">
 <span class="lab">💡 STRATEGY · 平日優勢</span>
 週一糸島及能古島人流為週末的 30–40%。塚本鮮魚店 / 二見浦排隊縮短 50%。能古島渡輪可<b>連車上船</b>(¥5,040 來回)，省去離島交通煩惱。
@@ -766,6 +856,25 @@ Day 3 (藍色) 是最長最遠的單日線 — 共 360+ km。Day 4 (黃色) 是�
   <div class="wx"><b>20°C</b>晴<br>降雨 10%</div>
 </div>
 
+<div class="attractions">
+  <a class="attr-card g-forest" href="https://www.google.com/maps/search/?api=1&query=福岡市動物園" target="_blank">
+    <span class="attr-tag">ZOO</span><span class="attr-emoji">🐼</span>
+    <div class="attr-name">福岡市動物園</div><div class="attr-sub">紅熊貓 · 長頸鹿 · 企鵝</div>
+  </a>
+  <a class="attr-card g-sakura" href="https://www.google.com/maps/search/?api=1&query=福岡市植物園" target="_blank">
+    <span class="attr-tag">GARDEN</span><span class="attr-emoji">🌺</span>
+    <div class="attr-name">福岡市植物園</div><div class="attr-sub">溫室 · 春花</div>
+  </a>
+  <a class="attr-card g-sunset" href="https://www.google.com/maps/search/?api=1&query=博多阪急" target="_blank">
+    <span class="attr-tag">SHOPPING</span><span class="attr-emoji">🎁</span>
+    <div class="attr-name">博多採買</div><div class="attr-sub">阪急 · KITTE · 福砂屋</div>
+  </a>
+  <a class="attr-card g-night" href="https://www.google.com/maps/search/?api=1&query=大東園+上川端町" target="_blank">
+    <span class="attr-tag">DINING</span><span class="attr-emoji">🥩</span>
+    <div class="attr-name">大東園 本店</div><div class="attr-sub">老字號燒肉</div>
+  </a>
+</div>
+
 <div class="callout info">
 <span class="lab">💡 STRATEGY · 慢日</span>
 經 Day 3–4 連續高強度後的恢復日。動物園早上 → 午後博多採買 → 晚餐燒肉。預留充裕緩衝時間，幼童狀態優先。
@@ -805,6 +914,21 @@ Day 3 (藍色) 是最長最遠的單日線 — 共 360+ km。Day 4 (黃色) 是�
 <div class="day-head">
   <div><div class="num">DAY 06 · DEPARTURE</div><h2>櫛田神社 · <span class="acc">回港</span></h2><div class="date">2026-04-22 (WED)</div></div>
   <div class="wx"><b>18°C</b>晴<br>降雨 15%</div>
+</div>
+
+<div class="attractions">
+  <a class="attr-card g-stone" href="https://www.google.com/maps/search/?api=1&query=櫛田神社+福岡" target="_blank">
+    <span class="attr-tag">SHRINE</span><span class="attr-emoji">⛩️</span>
+    <div class="attr-name">櫛田神社</div><div class="attr-sub">博多總鎮守</div>
+  </a>
+  <a class="attr-card g-wood" href="https://www.google.com/maps/search/?api=1&query=川端商店街" target="_blank">
+    <span class="attr-tag">ARCADE</span><span class="attr-emoji">🏮</span>
+    <div class="attr-name">川端商店街</div><div class="attr-sub">最後手信 · ぜんざい</div>
+  </a>
+  <a class="attr-card g-sky" href="https://www.google.com/maps/search/?api=1&query=福岡空港" target="_blank">
+    <span class="attr-tag">DEPART</span><span class="attr-emoji">🛫</span>
+    <div class="attr-name">福岡機場</div><div class="attr-sub">回港 · 一蘭午餐</div>
+  </a>
 </div>
 
 <div class="callout dan">
